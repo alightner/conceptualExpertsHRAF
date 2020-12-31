@@ -17,11 +17,6 @@ output:
     toc: false
 fontsize: 11
 
- # \usepackage{setspace}
- #  \doublespacing
- #  \usepackage{lineno}
- #  \linenumbers
-
 header-includes: |
   \usepackage{fancyhdr}
   \fancyhf{}
