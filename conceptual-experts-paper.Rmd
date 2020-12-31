@@ -1,0 +1,330 @@
+---
+title: \LARGE \textbf{Conceptual knowledge, ethnoscientific expertise, and cultural transmission}
+subtitle: \textbf{Testing five evolutionary models in 55 traditional cultures}
+author:
+  - Aaron D. Lightner^[Corresponding author, aaron.lightner@wsu.edu]
+  - Cynthiann Heckelsmiller
+  - Edward H. Hagen
+date: \emph{Department of Anthropology, Washington State University}
+abstract: |
+  People everywhere acquire high levels of conceptual knowledge about their social and natural worlds, which we refer to as *ethnoscientific expertise*. Evolutionary explanations for expertise are still widely debated. In this ethnographic study, we analyze text records (N=547) describing ethnoscientific expertise among 55 cultures in the eHRAF to test the mutually compatible roles of collaboration, proprietary knowledge, cultural transmission, honest signaling, and mate provisioning. We found relatively high levels of evidence for collaboration, proprietary knowledge, and cultural transmission, and lower levels of evidence for honest signaling and mate provisioning. In our exploratory analyses, we found that whether expertise involved proprietary vs. transmitted knowledge depended on the domain of expertise. Specifically, medicinal knowledge was positively associated with secretive and specialized knowledge for resolving uncommon and serious problems, i.e., proprietary knowledge. Motor skill-related expertise, such as subsistence and technological skills, was positively associated with broadly competent and generous teachers, i.e., cultural transmission. We also found that collaborative expertise was central to both of these models, and was generally important across different knowledge and skill domains.
+
+  Word count: 7903
+
+numbersections: true
+output:
+  bookdown::pdf_document2:
+    toc: false
+fontsize: 11
+
+ # \usepackage{setspace}
+ #  \doublespacing
+ #  \usepackage{lineno}
+ #  \linenumbers
+
+header-includes: |
+  \usepackage{fancyhdr}
+  \fancyhf{}
+  \renewcommand{\headrulewidth}{0pt}
+  \rhead{\thepage}
+  \pagestyle{fancy}
+  \usepackage{pdflscape}
+  
+bibliography: "references/refs.bib"
+csl: "references/apa.csl"
+---
+
+\pagenumbering{gobble}
+
+\newpage
+
+\pagenumbering{arabic}
+
+```{r setup, echo=FALSE, warning=FALSE, message=FALSE}
+knitr::opts_chunk$set(echo=FALSE, warning=FALSE, message=FALSE)
+#knitr::opts_chunk$set(fig.pos = 'p') # Places figures on their own pages
+knitr::opts_chunk$set(dpi=600) # Figure resolution and size
+knitr::opts_chunk$set(fig.env="figure") # Latex figure environment
+knitr::opts_chunk$set(dev = "cairo_pdf")
+source('analysis.R')
+```
+
+# Introduction
+
+Humans are intuitive scientists [@kuhnChildrenAdultsIntuitive1989; @szollosiPeopleIntuitiveScientists2020]. People everywhere acquire knowledge about fitness-relevant properties of their social and natural worlds [@albuquerqueEvolutionaryEthnobiology2015; @atranCognitiveFoundationsNatural1993; @gopnikScientistCribWhat2000], sort novel stimuli into classification systems [@ellenCategoricalImpulseEssays2006; @lakoffWomenFireDangerous1987; @ortonyPsychologicalEssentialism1989], and infer patterns and causation from noisy phenomena [@cosmidesAreHumansGood1996; @gigerenzerCognitionIntuitiveStatistics2015; @sperberCausalCognitionMultidisciplinary1995]. Individual knowledge becomes cultural knowledge via social learning [@henrich2001role; @henrichEvolutionCulturalEvolution2003; @richersonNotGenesAlone2005], and discourse and argumentation [@mercierEnigmaReason2017].
+
+Existing research has focused on the cognitive, social, and ecological factors influencing the formation and dissemination of *ethnoscientific knowledge*, defined as culturally varying and locally useful bodies of conceptual knowledge about the social and natural world [@atranNativeMindCultural2008; see also @heintzScientificCognitionCultural2007]. It is less clear, however, how and why some individuals might pursue relatively high levels of domain-specific conceptual knowledge compared to others within their population, which we will refer to as *ethnoscientific expertise*.\footnote{“Ethnoscience” can also refer to a particular Western scientific approach to ethnographic research on indigenous knowledge systems (Sturtevant 1964), which today is usually referred to as cognitive anthropology (Kronenfeld 2011). Here, and in the ethnographic database (eHRAF) from which our study data was drawn, “ethnoscience” instead refers to the \emph{content} of these indigenous knowledge systems, which are often culturally specific.}
+
+## The conundrum of ethnoscientific expertise
+
+Levels of knowledge and skill vary for almost any ability. Expertise refers to domain-specific knowledge or skills reliably performed in a way that is superior to that of most other people [@ericssonExpertPerformanceIts1994].\footnote{In the expertise literature, questions about scale when comparing experts to non-experts is often ambiguous. For our purposes, expertise will be defined relative to other people in an individual's local community rather than, say, compared to the average person on a global scale.} How and why some experts emerge in any domain requiring extensive knowledge is not straightforward. Explanations often focus on natural ability, favorable circumstances during development, and/or dedicated and systematic practice [@ericssonCambridgeHandbookExpertise2018]. Some consensus exists among scholars about the necessity-but-insufficiency of each of these predisposing factors. Explanations for the psychological causes of expertise do not often go beyond a proximate level description [@tinbergenAimsMethodsEthology1963; e.g., @barlowMentalProdigies1952; @ericssonWhatExceptionalExceptional1988; @ericssonExpertPerformanceIts1994]. When they do, they typically focus on cognitive, genetic, and developmental aspects of expertise [@dukasAnimalExpertiseMechanisms2019; @plominNatureNurtureExpertise2014] rather than evolutionary strategic reasons for investing in expertise.
+
+Multiple open problems therefore remain about the evolution of expertise. First, acquiring expertise in one domain, such as botany, zoology, physiology, or meteorology, incurs an opportunity cost, e.g., by reducing knowledge of other domains and reducing investment in other fitness increasing activities. Relatedly, an adaptive learning strategy would be to acquire practical knowledge about the world during early stages of development, but to divert this investment toward other efforts upon reaching adulthood, such as reproduction and subsistence (i.e., optimizing an explore-exploit tradeoff; see @gopnikChildhoodSolutionExplore2020).
+
+Second, environments are typically structured in ways that favor simple heuristics [@gigerenzerSimpleHeuristicsThat2001; @slomanKnowledgeIllusionWhy2017a]. A forager, for example, could discern edible vs. poisonous berries with simple, locally relevant rules (e.g., discriminating based on color, taste, or location) that make a complex botanical theory unnecessary for survival. Simple rules can be useful for a range of computationally complex tasks, such as predicting seasonal weather patterns and animal behaviors, or navigating social relationships [@gigerenzerHeuristics2011]. Complex and elaborate theories are nevertheless well-documented in a variety of ethnoscientific domains across cultures, representing within-population knowledge variation and at least some highly knowledgeable individuals [@berlinMedicalEthnobiologyHighland2015; @reyes-garciaCulturalTransmissionEthnobotanical2009].
+
+Finally, it is not clear how expertise relates to cultural transmission. Cultural evolutionary models rely on trait variation and imitation of skills that often involve easily observable and transmissible behaviors, such as boat making or food preparation [@boydCulturalNicheWhy2011; @henrichSecretOurSuccess2016]. It is less obvious, however, that strictly *conceptual* and unobservable knowledge, e.g., about plants, animals, or weather patterns, can be grouped with observable behaviors in a single overarching category of transmissible cultural traits [@morinHowTraditionsLive2015; @readCulturalComplexityComplexity2019]. Model assumptions about expertise, such as the scope for improving individual-level competence, might vary by these different types of knowledge [@ericssonExpertPerformanceIts1994].
+
+
+Further, if expertise requires an individual learning cost (e.g., time spent practicing, innovating, or experimenting to improve a skill), and socially learning from an expert is possible, then evolutionary models show that without additional benefits to the expert, populations with social learning gain no fitness advantages relative to those without it [@rogersDoesBiologyConstrain1988]. This suggests that expertise requires a fitness advantage to offset the costs of individual learning [@boydWhyDoesCulture1995].
+
+
+In short, why do some individuals invest more heavily in ethnoscientific knowledge than others? If a given knowledge domain is not obviously practical or useful on a day-to-day basis, how do experts apply their knowledge, if at all, to increase their inclusive fitness?
+
+## Study aims: Testing evolutionary theories of expertise in the ethnographic record
+
+In this study, we operationalize multiple theoretical models that might explain expertise as an evolutionary strategy, and test them in the ethnographic record. Many previous cultural evolutionary theories have modeled skill acquisition and transmission in practical knowledge domains. These theories emphasize *imitation*, i.e., copying observable behaviors involving substantial motor activity, such as boat making [@boydCulturalNicheWhy2011] and food preparation [@henrichSecretOurSuccess2016].
+
+We diverge from prior studies by emphasizing *conceptual* knowledge, a consequence of our focus on ethnoscientific expertise. Ethnoscience in this study includes elaborate systems of knowledge, such as the botany or medicine, where concepts are interrelated via rules and principles “concerning phenomena of the external world and of the human organism” (eHRAF World Cultures). These social or natural principles might (or might not) be used for practical applications with observable motor activity, such as bone-setting, weaving, or hunting. It is therefore inevitable that practical activities will emerge from our systematic search of ethnography. Our restricted search criteria, however, ensures that they are secondary to the ethnoscientific knowledge on which we focus (discussed further in the Methods section).
+
+We also make an important distinction between *products* [of knowledge] vs. *know-how*. *Products* refer to applications of knowledge, whereas *know-how* refers to the underlying cognitive system or process reliably yielding a desired product. Each can be transmitted, but products do not necessarily reveal know-how. For example, a doctor might know how to diagnose and treat illness, curing the patient. The patient, however, will not gain the know-how used for her diagnosis. That is, if a skill requires complex conceptual knowledge, then observation is often insufficient to acquire that skill [@morinHowTraditionsLive2015].
+
+
+In the following sections, we operationalize mutually compatible theories about how and why ethnoscientific experts would heavily invest in know-how (i.e., conceptual knowledge). See the SI for extended supporting quotations and further discussion of our operationalizations.
+
+### Cultural transmission model (CTM)
+
+Dual inheritance theorists characterize the human brain as a device for learning, storing, and transmitting cultural information [@muthukrishnaCulturalBrainHypothesis2018; @richersonNotGenesAlone2005], and argue that social learning is strictly necessary for evolutionary success [@boydCulturalNicheWhy2011; @henrichSecretOurSuccess2016]. In the cultural transmission model (CTM), experts commit high levels of cultural knowledge to memory, and are a source of socially transmitted knowledge to others in the population [@boydCultureEvolutionaryProcess1985], generally in exchange for a fitness benefit [@boydCulturalNicheWhy2011; @henrichEvolutionPrestigeFreely2001]. Fitness benefits conferred to experts might include material resources, cooperative partnerships, or services from an apprentice or peer [@jimenezPrestigebiasedSocialLearning2019; @price2015service].
+
+The CTM also explains *how* skillful persons are identified: prestige is a cue of competence that allows others to selectively learn from, and direct freely conferred deference to, experts [@henrichEvolutionPrestigeFreely2001; @henrichEvolutionCulturalEvolution2003]. Prestige might include culturally-specific concepts, symbols, or other conspicuous indications of success [@boydCultureEvolutionaryProcess1985; @henrich2001role]. For the CTM, experts do not have proprietary or secretive knowledge that they withhold from laypersons, but instead transmit their valuable knowledge based on proximity sought by acolytes who somehow benefit experts in return. Importantly, valuable knowledge for the CTM should not only include products such as advice or assistance, but know-how that the expert possesses, such as plant knowledge or technological skills that acolytes can use in the future.
+
+CTM predictions include widely distributed knowledge addressing common, day-to-day problems (e.g., subsistence-related activities, technological skills); reputations for efficacious solutions to those problems; and experts who share knowledge (know-how) with other experts or non-experts, often in the context of mentorship or apprenticeship. Additional predictions include prestigious and high status experts, deference, experts who have a reputation for generosity and/or are preferred social partners beyond their domains of expertise, and experts with influence beyond their domains of expertise.
+
+### Proprietary knowledge model (PKM)
+
+Many services provided by experts, such as predictions, advice, or medical care, require underlying know-how and skills that are not readily transmissible without effortful teaching and practice [@ericssonExpertPerformanceIts1994; @hagenLeadershipPrestigeMothering2019; @morinHowTraditionsLive2015]. In contrast to the CTM, which emphasizes the wide transmission of useful knowledge and skills, we formulated the proprietary knowledge model (PKM), which proposes that experts' conceptual knowledge is not readily transmissible, but restricted to specialists. A central idea for the PKM is that experts can use know-how to provide a valuable service or product to other people, who themselves do not possess solutions of their own, and who cannot subsequently transmit this learned information to others. A cost-effective strategy for addressing rare and consequential problems might be to consult a specialized expert in exchange for a complementary service or payment. According to the PKM, the value of an expert is determined by his or her relatively rare ability to provide a specific efficacious service [@toobyFriendshipBankerParadox1996].
+
+
+A *biological market* of mutually beneficial partnerships (Hammerstein and Noe 2016) can include providing information [@bouhlelSharingNotErring2018] in exchange for similarly valuable benefits (e.g., payments and continuing patronage to the expert). An expert’s high value in this market requires that she is hard to replace [@toobyFriendshipBankerParadox1996]. Hence, according to the PKM, services (*products*) are freely shared, but the rare *know-how* used to generate shared outcomes is proprietary, difficult to reverse engineer, and difficult for non-experts to apply and achieve similar outcomes [@hagenLeadershipPrestigeMothering2019].
+
+PKM predictions include experts' services conferring benefits with some evidence of success; experts having reputations for efficacy and gaining patronage based on efficacy; narrow specialization in a domain-specific problem that is uncommon and serious when it arises; rare, secretive know-how employed in an opaque process by which services are provided; and material resources received in return as payment.
+
+### Collaborative cognition model (CCM)
+
+The collaborative cognition model (CCM) emphasizes that knowledge and expertise are highly social and collaborative activities among multiple specialist types, each with complementary roles, insights, and areas of specialization. Contrary to popular images of science, creativity, and innovations, the CCM proposes that concepts are not improved by lone geniuses or individual experts, and rarely if ever emerge as fully formed ideas [@mercierEnigmaReason2017; @slomanKnowledgeIllusionWhy2017a]. Instead, cognitive tasks are often distributed across multiple interdependent roles, allowing experts to invest heavily in some areas of expertise while relying on other experts for information in other areas, a division of cognitive labor [@heintzIntroductionWhyThere2004; @hutchinsCognitionWild2000; @keilFolkscienceCoarseInterpretations2003]. According to the CCM, a high level of interaction between cognitive, sociocultural, and ecological factors collectively shape concepts, theories, solutions to domain-specific problems, and even the questions that experts consider in the first place [@nersessianCreatingScientificConcepts2010; @sperberExplainingCultureNaturalistic1996].
+
+CCM predictions include distributed expertise across multiple types of narrow specialist (i.e., a division of labor), collaboration among specialists that collectively produces more knowledge than each individual possesses, and knowledge (know-how) that is shared or exchanged among multiple experts.
+
+### Honest signaling model (HSM)
+
+Spence [-@spenceJobMarketSignaling1978] argued that candidates in a job market can honestly signal their general competence, which is otherwise opaque to employers, with credentials that are relatively less costly to acquire for those with greater general competence. In evolutionary biology, a similar argument suggests that costly traits reliably signal genetic quality in a mating market [@grafenBiologicalSignalsHandicaps1990; @zahaviMateSelectionSelection1975; see also @pennHandicapPrincipleHow2020]. Sexual selection based on costly signals of fitness is hypothesized to explain a number of human traits, such as male hunting behavior and conspicuous meat sharing to gain mating opportunities [@smithTurtleHuntingTombstone2000]. Abilities must not only be successfully broadcasted, but typically gain traction in a given cultural milieu in the form of social standing, locally relevant indicators of success, and prestige [@hawkesShowingHandicapSignaling2002; @winegardEvolutionExpertise2018].
+
+Applied to expertise, the honest signaling model (HSM) proposes that displays of knowledge serve as a costly signal of genetic quality to prospective mates (i.e., that expertise is less costly to obtain for those with higher genetic quality). On this view, culture largely consists of conspicuous “courtship adaptations” [@millerSexualSelectionCultural1999, p. 81; see also @geherMatingIntelligenceIntegrative2008; @millerMatingMindHow2011], and creativity and intelligence are relevant underlying traits that are signaled by displays of expertise.
+
+Predictions based on the HSM prioritize overt displays of knowledgeability and skill, status and prestige, a short-term mating market in which signals are produced, and experts’ access to multiple mates. Fitness indicators should also be difficult for those with low genetic quality to achieve. Because our data did not have measures of genetic quality, we looked for evidence that acquisition of expertise involved clear costs.
+
+### Mate provisioning model (MPM)
+
+Human social hierarchies and mate competition involve not only physical formidability, as seen in gorillas and chimpanzees, but also “prestige” -- culturally-defined symbols of success that often involve valued skills and knowledge [@barkowDarwinSexStatus1989; see also @manerDominancePrestigeDual2016; @vanvugtDualModelLeadership2019]. Humans also diverged from chimpanzees and gorillas in their shift toward strong male-female pair-bonding and increased paternal investment in offspring [@kaplanEvolutionaryEcologicalRoots2009], sexual selection for which would have included individuals choosing mates based on their relatively high levels of resource access and provisioning behavior [@bussSexDifferencesHuman1989; @gavriletsHumanOriginsTransition2012].
+
+In contrast to the short-term mating strategy outlined in the HSM, the mate provisioning model (MPM) suggests that expertise is a means of competing for mates by increasing one’s ability to provision their offspring either directly, or by controlling resource production [@barkowAdaptedMindEvolutionary1992; @stewart-williamsApeThatThought2013]. That is, mates choose prestigious and high-skilled experts based on their prospects for long-term parental investment and mate provisioning [@barkowDarwinSexStatus1989; @bussConsequencesPartnerChoice1992; @schmittEvolutionaryPerspectiveMate2008]. Researchers have suggested similar hypotheses about sexually selected hunting behaviors among males who preferentially provision food to their kin [@bussPsychologicalSexDifferences1995; @hillHuntergatherersNewWorld1989].
+
+Predictions based on the MPM include skill and knowledge acquisition involved in expertise that is best understood in terms of its practical applications, which are preferentially used to acquire resources for mates and offspring [@kaplanTheoryHumanLife2000]. Hence, predictions based on the MPM include status and prestige; mate choice based on male provisioning prospects (e.g., reputations for generosity, commitment to offspring); actual evidence of investment toward offspring; and high levels of mate fidelity.
+
+
+## Similarities and differences among theoretical models
+
+Although many of the predictions described here are specific to one theoretical model, some are compatible with multiple models. We refer to these predictions as model-*specific* and model-*generic*, respectively. Four of the five models (CTM, PKM, MPM, HSM) are premised on a hierarchy among skill levels, and prestige is central to at least three of these (CTM, MPM, HSM). The CTM, PKM, MPM, and HSM emphasize fitness benefits to experts, but these models largely differ on how and why expertise is beneficial. This is especially clear, for example, in the mate access conferred for prestige described in sexual selection models (HSM and MPM) vs. the deference and resource access in CTM. Resource access is common to the MPM, CTM, and PKM, but the latter two make no predictions about provisioning of those resources to mates.
+
+The PKM sharply diverges from the CTM by focusing on shared products and secretive know-how, which might be conditionally shared for a direct benefit. The PKM, which emphasizes *barriers* to knowledge transmission, would nevertheless require some transmission of knowledge systems from experts to novices, meaning that it is at least partially compatible with the CTM.
+
+The CCM is uniquely compatible with other models. Rather than providing a strictly evolutionary explanation for expertise, it emphasizes the distributed and collaborative social structure that might underlie expertise at a group level, in addition to the competition inherent to the other four models.
+
+# Methods
+
+To characterize ethnoscientific expertise and test the level of cross-cultural support for each theoretical model, we used data from the electronic Human Relations Area Files (eHRAF). The eHRAF is a digitized database of over a million pages of primary ethnographic documents, spanning several centuries, from over 400 cultures around the world. We restricted our search to the Probability Sample Files (PSF), a stratified subset of 60 cultures in the eHRAF that includes one randomly selected culture from 60 geographically diverse areas [@narollProposedHRAFProbability1967]. All documents in the eHRAF are coded at the paragraph level using an Outline of Cultural Materials (OCM), a hierarchically organized coding scheme containing several hundred numeric codes that are assigned to a unique and specific topic [@murdockOutlineCulturalMaterials2006]. Paragraphs relate to multiple topics and therefore consist of multiple codes. For example, if a single paragraph explains a cultural theory about plants, animals, and disease, then the paragraph would be coded with OCM codes for “ethnobotany” (824), “ethnozoology” (825), and “theory of disease” (753).
+
+We searched the PSF for 68 OCM codes that could plausibly result in descriptions of *conceptual* knowledge in social or natural domains, such as ethnometeorology, ethnophysiology, and genealogy. We narrowed this search using six keywords that refer to highly knowledgeable experts in those domains, such as “expert\*”, “specialist\*” and “practitioner\*” (where the “*” is a wildcard that would match any suffix). We did not include OCM codes or keywords that referred to specific skills, such as woodworking or boatmaking. Focusing on knowledge about the social and natural world, we also did not include OCM codes relating to religious or spiritual leaders in our search terms (but did not exclude them or expertise in supernatural domains from our results). See the SI for our full search parameters. This search resulted in 1595 paragraphs from 483 documents.
+
+## Inclusion criteria for text records
+
+Many OCM topics are quite broad, and some paragraphs did not contain any information that was relevant to ethnoscientific expertise. If a description was relevant to ethnoscientific expertise, then we included the contiguous set of paragraphs of which it was part, which we refer to as a “text record” henceforth. Because our primary aim was to collect text records about ethnoscientific expertise, we included text records from the ethnographic literature based on two key criteria set out prior to searching: (1) evidence of ethnoscientific knowledge, and (2) evidence of expertise. In this section, we clarify these criteria and how they informed our review process (excluding vs. including text records).
+
+First, and for the purposes of including vs. excluding text, we defined *ethnoscientific knowledge* as conceptual systems where principles about the natural or social world are socially or individually acquired. Although knowledge can be usefully applied to a number of possible types of practical applications (e.g., curing/healing, certain crafts, hunting/trapping, conflict resolution, ethical quandaries), the OCM codes in our search prioritized the underlying conceptual theories that *can* be applied (rather than descriptions of applications themselves). Inclusion of practical skills such as hunting, herding, agriculture, or conflict resolution were therefore secondary outcomes of our search strategy, rather than primary targets. If a conceptual knowledge domain was included in our search (e.g., ethnozoology) and was frequently linked to a skill that was not included in our search (e.g., hunting), then this was an informative result about that knowledge domain being commonly applied to hunting, rather than a simple result of "hunting" being included in the search.
+
+Second, as evidence of *expertise* we considered indications of within-group variation in knowledgeability that included descriptions of “experts”, or individuals who were highly knowledgeable compared to others. If a text record described an expert individual or a specific group of experts, for example, then it met this criteria. If a text record was vague about individual or within-group variation (e.g., “the Maasai are expert herders”), then it did not meet this criteria and was therefore excluded. Expert knowledge might be specific to a single domain such as plants, animals, meteorology, or social exchange, but it might also be general and include multiple distinct knowledge domains possessed by a single expert and/or multiple types of expert. See the discussion of our coded variables in the SI for details.
+
+Our review resulted in a dataset containing descriptions of ethnoscientific experts and specialists. The final dataset contained `r nrow(df)` text records discussing scientific expertise from `r nrow(cite_data)` documents (e.g., books, articles) and `r nrow(culture_df)` cultures.
+
+## Operationalizing and coding evidence for our theoretical models
+
+We coded each text record on its domain(s) of conceptual knowledge, and the presence or absence of evidence for each of our theoretical models. Domains of expertise included conceptual knowledge domains in our search terms, and the additional domains found in our results (i.e., not included in our search terms). For example, for an ethnozoology expert with exceptional hunting skill, we coded "ethnozoology" and "hunting" as expertise domains despite only the former being included in our search terms.
+
+We simplified the wide range of domains in our final dataset by additionally coding each domain of expertise in each text record on three non-mutually exclusive, high-level *domain types*: conceptual, motor skill-related, and/or medical domains. Because our inclusion criteria was based on the presence of ethnoscientific expertise, conceptual knowledge was included to some extent in each text record. Nevertheless, there was considerable variation in the extent to which text records described conceptual knowledge. A text record’s domain of expertise was therefore coded as “conceptual” only if the domain *primarily* involved conceptual knowledge.\footnote{The \emph{conceptual} domain type refers to ethnoscientific conceptual domains, largely designated by the eHRAF OCM codes. See the SI for details.} The distinction between conceptual vs. motor skills was motivated by how observable a skill might be: Motor skills are observable, whereas conceptual domains often are not. The medical domain was also included as a domain type because it was both recurrent in the literature and highly inclusive (e.g., herbalists, pharmaceutical experts, diviners and curing specialists). Importantly, these domain types often co-occurred in single text records. For example, experts with motor skills as boat makers, construction specialists, and woodworkers often had high levels of ethnobotanical knowledge, a conceptual domain. See the SI for more details about the overlap among conceptual, motor, and medical domain types.
+
+To operationalize our theoretical models, we coded each text record for presence/absence on `r len_modvars` variables corresponding to predictions outlined in our theoretical models, as described above and detailed in the SI. We also included variables with evidence against these variables, along with age, sex, and case vs. cultural model. The latter indicated if a text record discussed specific individuals who were experts (cases) and/or a general description of domain experts in that culture (models). See the SI for coding examples and other details.
+
+ADL and CH independently coded for presence/absence (1/0) of evidence for each variable on each text record. CH was familiar with relevant theories but blind to specific hypotheses in this study. ADL was not blind to the study hypotheses. Results of the independently coded datasets were a `r round(ps.total.agree$value,1)`% match with a Cohen's kappa indicating moderate agreement ($k=$ `r round(ps.total.kappa$value,2)`). See the SI for more details about interrater reliability. Afterward, ADL and CH discussed and reconciled all disagreements to produce the coded dataset used in our analyses.
+
+## Statistical analyses
+
+Our data comprised a `r dim(bin_mat)[1]` by `r dim(bin_mat)[2]` binary matrix of 0’s and 1’s, where each row was one text record and each column was one variable (0: no evidence; 1: evidence for). To test our theoretical models, we determined the percentage of text records that supported each variable of each model, as well as the percentage of cultures with at least one text record supporting each variable of each model. We compared models by computing the proportion of cells with evidence for that model. For example, the MPM has `r length(mpm_vars)` variables, so there is an `r nrow(df)` $\times$ `r length(mpm_vars)` dimension binary matrix for this model. Of the `r nrow(df) * length(mpm_vars)` cells, `r sum(df[mpm_vars])` (`r 100*signif(sum(df[mpm_vars])/(nrow(df) * length(mpm_vars)), 3)`%) had evidence for the model. This percentage was the model score.
+
+We computed adjusted means and confidence intervals of support for each variable using generalized linear mixed effects models and cluster bootstrapping, with authors nested within cultures as our grouping variables. We explored the extent to which our high-level domain types (conceptual, motor, medicine) predicted evidence for each of our coded variables, and we investigated structure in our entire binary matrix using PCA and graph-based clustering methods.
+
+All data and code are available at: https://github.com/alightner/conceptualExpertsHRAF.
+
+# Results
+
+The dataset contained `r nrow(df)` text records, and we found evidence supporting one or more variables from our theoretical models in `r nrow(dh)` (`r round(nrow(dh)/nrow(df)*100)`%) of these records. The geographic distribution of each culture, along with the number of text records and subsistence strategy per group, are shown in figure \@ref(fig:worldmap). We did not find evidence for ethnoscientific expertise in 5 of the 60 cultures in the PSF. Text records per culture ranged from `r min_txt_culture` to `r max_txt_culture` with a median of `r median_txt_culture`. In total, our text records included `r txt_cases` cases describing specific experts and `r txt_models` cultural models, i.e., general descriptions of experts. Publication dates of the `r nrow(cite_data)` documents from which the text records came ranged from `r min_year` to `r max_year`, with `r docs20cent`% of documents published during the 20th century (median year was `r median_year`). See the SI for details and text analyses.
+
+Among the ethnoscientific experts described in our dataset, sex was unknown in `r unknown_sex_perc`% of the text records. Descriptions indicating sex clearly identified males in `r male_perc`% of all text records, whereas `r female_perc`% identified females. Of the text records describing male and/or female experts, `r sex_restrict_perc`% also included descriptions of social roles that were either specific to only males or females. Individuals pursuing expertise in ethnoscientific domains were described as older or elderly adults in `r older_elderly`% of all text records, whereas `r adult`% described younger adults and `r child_adolescent`% described children or adolescents. Age was unknown in `r unknown_age_perc`% of our text records.\footnote{Note that for age categories, the percentages in each category and the percentages of uninformative records add to values greater than 100. This is because some individual text records described experts in multiple age categories within the same record.}
+
+\begin{landscape}
+
+```{r worldmap, fig.cap='Geographic region of each culture included in our dataset. Colors and shapes indicate subsistence strategy for each cultural group, and sizes indicate the number of text records for each culture in our dataset.', fig.align="center", fig.height=10, fig.width=12}
+
+world_map
+```
+
+\end{landscape}
+
+## Knowledge domains and types of skill
+
+Our search for ethnoscientific experts yielded a variety of knowledge and skill domains, many of which were not included in our search query. Among the conceptual knowledge domains that we included in our search, ethnomedical specialists, largely resulting from our search for theories of disease, were the most common. Expertise in ethnobotany, ethnozoology, ethnopsychology, and healing injuries were also relatively common, and frequently co-occurred in text records describing medical specialists. However, some knowledge or skill domains that we did *not* include in our search query reliably co-occurred with domains that we did include. Text records describing medical specialists, for example, often included descriptions of divination, which was not specified in our search terms. See figure \@ref(fig:domainplot).
+
+Some domains tended to cluster together: Medicine, for example, clustered with ethnobotany and ethnozoology, but it also formed a distinct cluster with ethnopsychology and divination. Social expertise, an inclusive category motivated by the ethnosociology OCM code (e.g., conflict resolution, intergroup relations), similarly clustered with traditional domains, such as mythology and norms of behavior, and with traditional history and law. Skills relating to a culture’s subsistence strategy (not included in our search query) clustered with ethnozoology, ethnobotany, and ethnometeorology, and often described use of knowledge to improve subsistence outcomes (e.g., ethnozoology among hunter-gatherers, ethnobotany among agriculturalists, and ethnometeorology among pastoralists and horticulturalists; see figure \@ref(fig:domainplot)).
+
+\begin{landscape}
+
+```{r domainplot, fig.cap='Graph representing commonly occurring domains of knowledge and skill that occurred in text records in our dataset. Vertices indicate domains that occurred in at least ten text records, and vertex size corresponds to the number of text records including that domain. Vertex colors indicate whether or not the domain was included in our original search query. Each edge indicates that a pair of knowledge/skill domains co-occurred in at least one text record. Edge widths correspond to the frequency with which each domain pair co-occurred (as determined by the number of text records describing them together).', fig.align="center", fig.height=8, fig.width=12}
+
+full_domain_plot
+```
+
+\end{landscape}
+
+## Model results at the text record and culture level
+
+Support for each variable was determined by the percentage of text records containing evidence for it (text record level support), and the percentage of cultures containing at least one text record with evidence for each of the same variables (culture level support). Each total model score included text record level support for each variable associated with the model. As indicated in figure \@ref(fig:maintextplot), some variables were included in multiple models and therefore contributed to scoring of multiple models.
+
+Based on model scores, the CCM received the highest level of support at the text record level (`r ccm_est`%) but it also had considerable evidence against it (`r anticcm_est`%). The PKM and CTM were both relatively well-supported and made largely distinct predictions, indicating mixed support for each (PKM: `r pkm_est`%, CTM: `r ctm_est`%). Although the HSM and MPM received similar but relatively low levels of support (HSM: `r hsm_est`%, MPM: `r mpm_est`%), evidence against the HSM and MPM was also relatively low (anti-HSM: `r antihsm_est`%, anti-MPM: `r antimpm_est`%). See figure \@ref(fig:maintextplot) for text record level support, culture level support, and total model scores. At the culture level, we found no meaningful variation in model scores by geographic region or subsistence strategy. See the SI for details.
+
+```{r maintextplot, fig.cap='Support for each variable, faceted by theoretical model. Points represent the percentage of evidence for that variable, and colors indicate whether that percentage is at the level of text record, culture, or total model score. Solid colors indicate variables that are specific to theoretical models, whereas faded colors indicate variables that are generic, i.e., included in more than one theoretical model. Error bars are 95\\% confidence intervals from a generalized linear mixed model with culture and author as random effects.', fig.align="center", fig.height=10, fig.width=8, fig.pos='H'}
+
+Model_full_plot
+```
+
+
+## Exploring model support by conceptual knowledge domains vs. motor skills
+
+At the text record level, support for each model variable was conditional on the presence/absence of medical, conceptual, and/or motor skill-related expertise in a given text record. See figure \@ref(fig:fixedeffectsplot). Specifically, we found that evidence of experts assisting with routine or common problems was much more frequent among individuals working in motor skill-related domains, such as woodworking, crafting, and subsistence. In contrast, this was much less frequent among specialists in medical domains, which were more associated with assisting people with uncommon and serious problems, less associated with widespread knowledge, and more associated with gaining patrons and clients based on the efficacy of their services. More broadly, and as shown in figure \@ref(fig:fixedeffectsplot), support for the CTM was largely associated with motor skills, whereas support for the PKM was largely associated with medical specialists.
+
+```{r fixedeffectsplot, fig.cap='Fixed effects of generalized logistic mixed effects models of support for each variable at the text record level as a function of each knowledge domain type (vertical facets), with culture and author as random intercepts. Colors indicate model-specific vs. model-generic variables. Error bars are 95\\% confidence intervals. To avoid extremely large standard errors, we restricted our fixed effects models to variables with support in at least 10\\% of all text records, which is why many variables that we coded and tested are not included in the models in this plot.', fig.align='center', fig.height=10, fig.width=10}
+
+fixed_effects_domain_plot
+```
+
+
+## Exploring structure in the data matrix
+
+We used two clustering methods to identify any inherent structure in our dataset (i.e., methods that ignored our *a priori* model structures). First, we visualized our dataset with a heatmap, ordering the rows and columns using the PCA angle seriation method, which projects the data onto the first two principal components and determines the order of each data point by its angle in this space [@hahslerSeriationInfrastructureOrdering2020]. See figure \@ref(fig:heatPCA). As a first approximation, this shows how strongly skewed the levels of support were among our coded variables, with considerable evidence for one group of variables (top) and much less evidence for a second group of variables (bottom). The seriation method also shows two partially overlapping clusters among our well-supported variables. In the left cluster of text records, expertise includes hierarchies in knowledge or skill level, widespread knowledge, assistance with common problems or activities, and experts who teach other people their skill. In the right cluster of text records, expertise includes assistance with uncommon and serious problems, patronage based on efficacious services provided by experts, and evidence of success in an expert's task domain. These clusters of text records are somewhat interpretable as primarily relating to the CTM (left) and the PKM (right), although it is worth noting that they overlap with each other, and the left cluster is diffuse and includes high levels of support in a number of columns that are not specific to the CTM. Also, the partial overlap between these clusters hinges, in part, on reputations for efficacy and distributed experts among multiple experts. The latter, which was well-supported in both of these clusters, was central to the CCM.
+
+```{r heatPCA, fig.cap='Heatmap visualizing the coded dataset based on presence (light cells) vs. absence (dark cells) of evidence for each variable in each text record. For readability, the dataset shown here is transposed, i.e., each row represents a variable and each column represents a single text record. Rows and columns were ordered using the PCA angle seriation method. See text for details.', fig.align="center", fig.height=9, fig.width=10}
+
+heat_PCA_angle
+```
+
+Second, to determine the extent to which similarities and differences among our variables corresponded to our *a priori* models, we clustered them using a graph-based method. Our dataset of presence/absence features is a large matrix of 0 and 1 values, which we used to create a matrix of binary distances between each variable.\footnote{For each pair of binary variables (0, 1), the distance is the proportion of elements in which only one is 1 amongst those in which at least one is 1.} This can be conceptualized as a weighted graph, where each vertex is a variable and each weighted edge is the distance between these variables. A minimum spanning tree (MST)  is a subgraph that connects all nodes with the shortest total distance [@zahnGraphTheoreticalMethodsDetecting1971].  Variables that are close on the graph had similar patterns of the presence and absence of evidence across all the text records.
+
+Variable clusters only partially mapped onto our *a priori* theoretical models. See figure \@ref(fig:minspantree). Specifically, we found a variable cluster that we characterize as a "market for specialists", which includes two subclusters: efficacious services and knowledge restrictions relevant to the PKM. The variables in this cluster had high levels of evidence across text records (indicated by the size of the nodes).
+
+A second cluster included experts with prestige, deference, reputations for generosity, influence and skill outside of one's area of expertise (i.e., "broad generalists"), and expert competition. We interpret this cluster, which also had high levels of evidence across text records, as support for the prestige and "information goods" theories associated with the CTM [@henrichEvolutionPrestigeFreely2001].
+
+Further, we found variable clusters that resembled aspects of the HSM and MPM, although the levels of evidence across text records was relatively low. A final cluster appeared to relate largely to shamans and low status occupational specializations. See the SI for details and examples of text records supporting this interpretation.
+
+\begin{landscape}
+
+```{r minspantree, fig.cap='Minimum spanning tree of the variable binary distance matrix. Vertices represent variables, vertex sizes correspond to levels of text record support for each variable, and vertex colors to whether or not the variable is model specific vs. model generic. Annotations refer to our interpretations of each cluster.', fig.align='center', fig.height=9, fig.width=11}
+
+Graph_evidence
+```
+
+\end{landscape}
+
+# Discussion
+
+Ethnoscientific experts were skilled in a variety of conceptual domains, with medical expertise being especially common. Although we restricted our search query and post-search filtering to only include text records describing ethnoscientific expertise, these text records also frequently included discussion of multiple knowledge and skill domains, conceptual and/or motor skill-related, such as boat making, woodworking, subsistence, and construction (figure 2).
+
+Our analyses were generally supportive of the collaborative cognition model (CCM), the proprietary knowledge model (PKM), and the cultural transmission model (CTM). The PKM and CTM make some contrasting predictions, however, and the anti-CCM (evidence against CCM) also received a moderate level of support. The CCM, PKM, and CTM therefore received mixed support overall, although support for the CCM and PKM was slightly higher than that of the CTM and anti-CCM. We found similarly mixed support for the HSM and MPM, but in general there was much less evidence in the text records for these models (figure 3). The mixed support for our *a priori* models indicates that some reformulation is in order.
+
+## Toward a data driven model of expertise
+
+Our exploratory analyses revealed factors that were associated with greater or lesser support for the three models with greatest support overall: the CCM, PKM, and CTM. Here we distill these insights to develop a more general model of ethnoscientific expertise.
+
+In our first exploratory analysis, we categorized specific expertise domains in each text record into more general domain types: conceptual knowledge, motor skills, and/or medical knowledge. Evidence supporting the CTM and PKM was largely conditional on these domain types. The CTM variables -- mainly *common and routine problems*, *teaching*, *skill level hierarchies*, and *prestige* -- were positively associated with expertise in motor skill-related domains. On the other hand, PKM variables -- mainly *assisting with uncommon and serious problems*, *distributed knowledge across multiple experts*, *reputations for efficacy*, and *patronage based on efficacious services* -- were positively associated with expertise in medical domains (figure 4). Medical domains were commonly linked to other conceptual domains, such as botany, psychology, and, more surprisingly, divination during times of uncertainty (figure 2).
+
+This distinction between the PKM and CTM was reinforced by the coarser-grained structure among our text records. The heatmap of our data matrix, with rows and columns ordered by PCA angle, showed that one major text record cluster provided evidence for variables largely associated with medical specialists and the PKM (upper-right cluster, figure 5), and a second major cluster of text records included support for predictions for the CTM, among many other variables (left cluster, figure 5). These two clusters partially overlapped, which hinged on high levels of support in each cluster for presence of experts with reputations for efficacious services, and distributed knowledge among multiple experts. Distributed knowledge in particular was motivated by the CCM, and its support is consistent with the idea that distributed and complementary social structures is a key factor for both widely transmitted knowledge and proprietary knowledge. The CCM, in other words, serves as a bridge between the PKM and CTM.
+
+Our finer-grained exploratory analysis of structure in our data matrix, using a graph-based clustering method (MST), also generally supported this relationship between the PKM, CCM, and CTM. In the MST, our variables clustered in ways that largely, but not completely, corresponded to our theoretical models (figure 6). A large and relatively well-supported cluster contained associations among prestige, deference, reputations for generosity, influence and skill outside of one's area of expertise (termed "broad generalists"). We interpreted this cluster as support for the “prestige and information goods" theories associated with the CTM [@henrichEvolutionPrestigeFreely2001]. A separate cluster, which was also well-supported, resembled what we call a "market for specialists", which itself included two subclusters: efficacious services and knowledge restrictions that are relevant to the PKM.
+
+Social dimensions of expertise, some part of the CCM, served as "hubs" linking the CTM and PKM clusters together: distributed expertise among multiple complementary expert roles (predicted by the CCM and PKM) and knowledge and skill hierarchies (predicted by the HSM, MPM, and CTM) were each situated between the *market for specialists* and *prestige and information goods* clusters. Collaboration among experts was directly adjacent to these hubs, and occurred more frequently than competition overall (competitive experts in `r compete_perc`% of text records vs. collaborative experts in `r collab_perc`%).
+
+The “hierarchy” hub also connected the branches of the MST that largely corresponded to the HSM and MPM. These are labeled as “access to mates” and “mate and kin provisioning” in figure 6, respectively, and are difficult to draw inferences from given the low levels of evidence for their constituent variables.
+
+Interestingly, a separate cluster that our theoretical models did not anticipate appeared to relate largely to shamans and low status occupational specializations. (See the SI for details.) Although this particular cluster consisted of low levels of support, ethnoscientific experts were also religious or spiritual leaders, such as priests or shamans, in `r perc_religious`% of our text records. Future research can further address this trend by investigating how religious leadership and ethnoscientific expertise might share a common evolutionary explanation.
+
+We now focus on the major *market specialists* and *prestige and information goods* branches, and their linking hubs, to more thoroughly evaluate their theoretical implications and interrelationships, in light of the domain specificity revealed by our exploratory analyses.
+
+## A market for specialists
+
+The PKM was more associated with ethnomedical specialists who were consulted during a crisis, sometimes using divination (figure 2), whereas the CTM was associated with observable motor skills, knowledge that is widely distributed in lesser forms among the population (beyond the experts), and commonly occurring problems (figures 4 and 5).
+
+If a problem is rare but serious, then for the average individual, the cost of learning to resolve it might be greater than the cost of paying a specialist to do so, if and when that problem arises. Outsourcing uncommon but serious problems creates a demand for solutions, and thus, a market niche for specializing in those solutions [@hagenLeadershipPrestigeMothering2019; @sugiyamaSocialRolesPrestige2003]. Specialized knowledge can therefore allow some individuals to gain a fitness advantage (e.g., prestige, material resources, beneficial partnerships) in exchange for their services, or *products* [@hammersteinBiologicalTradeMarkets2016a; @price2015service; @toobyFriendshipBankerParadox1996]. If the market value of those products is undermined by sharing the underlying know-how used to generate them, then a beneficial strategy for specialists would be to keep their knowledge hidden, or proprietary.
+
+This creates an apparent contradiction: The existence of cumulative cultural knowledge in *any* type of domain, proprietary or not, presupposes transmitted knowledge [@legareCumulativeCulturalLearning2017; @tennieRatchetingRatchetEvolution2009]. That is, cultural evolution literature correctly emphasizes that transmitted knowledge is imperative for cumulative culture [@boydCulturalNicheWhy2011; @boydWhyCultureCommon1996; cf. @pinkerCognitiveNicheCoevolution2010]. As our results clarify, however, it would be a mistake to conclude that transmitted and proprietary knowledge are at loggerheads, or that evidence for the PKM is evidence against the CTM (and vice versa). Instead, as we argue next, the relative importance of the CTM and PKM depends on properties of an expert's task domain.
+
+## The relationship between transmitted and proprietary knowledge
+
+Under the CTM, there is one type of social transmission: a larger pool of naive individuals observes a smaller pool of skilled individuals, perhaps in exchange for deference, thus acquiring their skills. Under the PKM, in contrast, there are two types of “transmission”: First, there are the services (products) that a few experts provide to a large pool of customers in exchange for some kind of payment, e.g., doctors’ diagnoses and treatments to patients. This does not result in much, if any increase in specialized knowledge by customers (e.g., patients do not gradually become doctors). Second, experts expend considerable effort training future experts (again, perhaps in exchange for some kind of much larger payment or inclusive fitness benefit). Indeed, consistent with the CTM, experts were also teachers in `r sl_perc`% of our text records, and this was closely related to assistance with common problems (figures 3 and 6). Of these observations, however, `r learned_kin_perc`% involved teaching among kin and `r learned_purchased_perc`% involved purchased knowledge, which is consistent with the PKM proposal that know-how is a valuable resource, and might not be unconditionally shared. In practice, there is a spectrum of expertise that lies between the CTM and PKM.
+
+Although the PKM does not rule out transmission, a possible concern about its constraints on transmission is knowledge loss, undermining the scope for cumulative culture. Task domains supported with the PKM are not commonly encountered, which by definition means that they are sampled rarely and provide fewer opportunities to learn [@strimlingRepeatedLearningMakes2009]. For example, Reyes Garcia et al. [-@reyes-garciaEvidenceTraditionalKnowledge2013] found that medicinal knowledge was susceptible to knowledge loss among Tsimane forager-horticulturalists over time, whereas motor skill-related domains such as boat making and construction tended to either remain consistent or increase over time.
+
+However, there are reasons to doubt that this concern is general to all types of skill domains. While much focus in cultural evolutionary theory is on behavioral copying,\footnote{The analogies used for characterizing humans as social learners are particularly illuminating: as \emph{Homo imitans} (Meltzoff 1988), humans socially learn by adaptively "plagiarizing" behaviors (Aoki et al. 2005), which is like "cheating on a test" (Boyd et al. 2011; see also Rogers 1988).} it is worth making explicit *how* knowledge in a particular domain is transmitted. One key difference between conceptual and motor skill-related domains is the degree to which information is public vs. private. Many motor skill-related domains, such as technological tasks, are achieved through specific, well-defined action sequences that can be observed and copied with high fidelity, even when underlying know-how is causally opaque [@flynnInvestigatingMechanismsCultural2012]. In contrast, conceptual knowledge comprises mental representations, some of which are more easily and reliably constructed than others [@boyerCognitiveTracksCultural1998; @sperberExplainingCultureNaturalistic1996]. Learning tools, such as ostensive communication, intuitive analogies, and mnemonic devices, are available means for communicating conceptual knowledge, but these rely on reconstructive processes rather than high fidelity copying [@acerbiIfWeAre2015; @morinReasonsBeFussy2016].
+
+Our study suggests that among experts, a tendency to broadly vs. conditionally share knowledge depends strongly on the type of knowledge/skill domain, i.e., common problems that are solved by acquiring motor skills, vs. rare serious problems that are solved by acquiring conceptual knowledge. Future research can investigate how high market value of services might be associated with proprietary knowledge that is reluctantly shared or exchanged for a benefit [but see @lewisWhereGoodsAre2015]. A relevant factor for choosing whether or not to share knowledge might also be its scope for monopolizing valuable services. An alternative hypothesis about knowledge loss, consistent with our account here, might be that some socioecological changes (e.g., market integration, developing clinics and infrastructure) introduce novel or expanded markets of knowledgeable specialists, on whom individuals can rely for efficient and efficacious solutions in a given domain [@salaliGlobalWEIRDingTransitions2020].
+
+
+## The distribution of cognitive labor
+
+A central feature of the CCM, which bridged the CTM and PKM, is a distribution of cognitive labor: Multiple experts have elaborate but incomplete knowledge about their own domains of expertise, and rely on others for similarly partial expertise in complementary areas [@heintzIntroductionWhyThere2004; @keilFolkscienceCoarseInterpretations2003; @slomanKnowledgeIllusionWhy2017a]. An economic exchange of ideas, on this view, enables cumulative cultural knowledge among highly interdependent specialists, permitting mutually beneficial increases in group-level knowledge. In conceptual domains, cumulative culture might resemble the evolution of scientific concepts (i.e., old ideas used to generate new ones, with lower demands on fidelity), rather than a “piling up” of ideas over time [@careyPrecisOriginConcepts2011; @heintzScaffoldingCoreCognition2013; @wimsattReproducingEntrenchmentsScaffold2007].
+
+The CCM is compatible with the coexistence of collaboration and competition, both of which are compatible with the PKM and CTM. (The CTM even clustered with competition among experts in figure 6.) Indeed, a more restrictive version of the CCM might have attenuated its emphasis on collaborative expertise, e.g., by including argumentation to gain influence in discourse [@mercierScientistsArgumentativeReasoning2014; @mercierEnigmaReason2017]. Open questions therefore remain about how competition among experts with proprietary knowledge is balanced against collaboration among experts, especially when they have complementary areas of knowledge. Do individual interests overlap as a consequence of mutually beneficial epistemic partnerships? What benefits calibrate otherwise conflicting interests, e.g., among apprentices and their acolytes? These questions can be investigated with future research.
+
+## Limitations and caveats
+
+Our source ethnographies varied in their theoretical commitments and aims. Some were broadly descriptive, but most focused on specific subjects other than expertise, and few shared our theoretical questions. Our search strategy also relied heavily on eHRAF OCM codes. Our sample is therefore not random, but is biased toward the subjects drawing the attention of ethnographers in our dataset, and the paragraph coding schemes used by HRAF staff. This suggests that our sample and its analyses are representative of ethnographic writings about expertise, rather than direct observations of expertise.
+
+Relatedly, an absence of evidence in this study should not be interpreted as evidence of absence. Ethnographers often emphasize the immediately relevant aspects of expertise, such as applications of knowledge, learning, social roles as experts, and consequences of being highly knowledgeable. This might account for the high levels of support among the CCM, PKM, and CTM compared to the HSM and MPM, especially if mating, parenting, and resource flows are less observable for, or deemed irrelevant by, the ethnographers. A similar caveat should be applied to the large number of religious practitioners in our results (`r perc_religious`% of text records); ethnoscientific concepts might be mistakenly seen as supernatural, when subject matter is abstract or involves invisible entities [@gottliebAfterlifeWhereWe2004].
+
+The abstract nature of conceptual knowledge also complicated matters. It is difficult to measure and characterize the distribution of knowledge in a population. Compared to direct empirical observations, which themselves face formidable challenges [@kronenfeldCompanionCognitiveAnthropology2011], ethnographic studies are especially imprecise. Drawing inferences from ethnographic texts, especially the relatively short ones in our study, involves a further and inevitable lack of precision. Different variables in our coding have different levels of overlap with each other, they might vary in their inclusiveness and specificity, and they are coded based on multiple levels of interpretation. We attempted to minimize these limitations by using two independent coders and reconciling coding differences afterward. Nevertheless, our data were filtered through judgments made not only by an ethnographer [@sperberAnthropologicalKnowledge1985], but also by our own interpretations of how the text records related to our coding scheme.
+
+## Conclusion
+
+In this study, we tested five mutually compatible evolutionary models of ethnoscientific expertise, using `r nrow(df)` ethnographic text records from 55 geographically diverse societies. We found high levels of support for the collaborative cognition model (CCM), the proprietary knowledge model (PKM), and the cultural transmission model (CTM), and low levels of support for the honest signaling model (HSM) and the mate provisioning model (MPM). In our exploratory analyses, we found that the PKM and CTM were conceptually linked by the CCM. Further, evidence for the PKM was largely associated with conceptual medicinal knowledge that solved rare but serious problems, whereas evidence for the CTM was largely associated with motor skills that solved common, everyday problems, such as subsistence and construction. While many evolutionary theories imply competition among experts, our results also suggest that collaboration among experts, with transmission of know-how and/or services, are also important.
+
+Taken together, our results suggest that, rather than applying a single theoretical framework across multiple cultural domains, cultural evolutionary theories about ethnoscientific expertise should explicitly focus on the private and conceptual vs. public and observable nature of knowledge and skill domains, and their applications to common vs. rare problems.
+
+\newpage
+
+# Acknowledgements
+
+We thank members of the Evolution of Science and Religion Seminar for many helpful comments.
+
+# Author Contributions
+
+ADL and EHH designed the study. ADL collected the data. ADL and CH coded the data. ADL and EHH analyzed the data. ADL wrote the first draft of the paper. ADL and EHH wrote the final draft of the paper. All authors read and approved the final draft of the paper.
+
+# Financial Support
+
+We acknowledge funding from the Issachar Fund and Templeton Religion Trust.
+
+# Conflicts of Interest declarations in manuscripts
+
+The authors declare none.
+
+# Research Transparency and Reproducibility
+
+All data and code are available at: https://github.com/conceptualExpertsHRAF.
+
+# References
