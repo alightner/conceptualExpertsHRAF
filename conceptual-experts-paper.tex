@@ -1,0 +1,894 @@
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+%
+\documentclass[
+  11pt,
+]{article}
+\usepackage{amsmath,amssymb}
+\usepackage{lmodern}
+\usepackage{ifxetex,ifluatex}
+\ifnum 0\ifxetex 1\fi\ifluatex 1\fi=0 % if pdftex
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math}
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+\usepackage{xcolor}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\IfFileExists{bookmark.sty}{\usepackage{bookmark}}{\usepackage{hyperref}}
+\hypersetup{
+  pdfauthor={Aaron D. Lightner; Cynthiann Heckelsmiller; Edward H. Hagen},
+  hidelinks,
+  pdfcreator={LaTeX via pandoc}}
+\urlstyle{same} % disable monospaced font for URLs
+\usepackage[margin=1in]{geometry}
+\usepackage{longtable,booktabs,array}
+\usepackage{calc} % for calculating minipage widths
+% Correct order of tables after \paragraph or \subparagraph
+\usepackage{etoolbox}
+\makeatletter
+\patchcmd\longtable{\par}{\if@noskipsec\mbox{}\fi\par}{}{}
+\makeatother
+% Allow footnotes in longtable head/foot
+\IfFileExists{footnotehyper.sty}{\usepackage{footnotehyper}}{\usepackage{footnote}}
+\makesavenoteenv{longtable}
+\usepackage{graphicx}
+\makeatletter
+\def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
+\def\maxheight{\ifdim\Gin@nat@height>\textheight\textheight\else\Gin@nat@height\fi}
+\makeatother
+% Scale images if necessary, so that they will not overflow the page
+% margins by default, and it is still possible to overwrite the defaults
+% using explicit options in \includegraphics[width, height, ...]{}
+\setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
+% Set default figure placement to htbp
+\makeatletter
+\def\fps@figure{htbp}
+\makeatother
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\setcounter{secnumdepth}{5}
+\usepackage{fancyhdr}
+\fancyhf{}
+\renewcommand{\headrulewidth}{0pt}
+\rhead{\thepage}
+\pagestyle{fancy}
+\usepackage{pdflscape}
+\usepackage{amsmath}
+\usepackage{setspace}
+\doublespacing
+\usepackage{lineno}
+\linenumbers
+
+\usepackage{booktabs}
+\usepackage{longtable}
+\usepackage{array}
+\usepackage{multirow}
+\usepackage{wrapfig}
+\usepackage{float}
+\usepackage{colortbl}
+\usepackage{pdflscape}
+\usepackage{tabu}
+\usepackage{threeparttable}
+\usepackage{threeparttablex}
+\usepackage[normalem]{ulem}
+\usepackage{makecell}
+\usepackage{xcolor}
+\ifluatex
+  \usepackage{selnolig}  % disable illegal ligatures
+\fi
+\newlength{\cslhangindent}
+\setlength{\cslhangindent}{1.5em}
+\newlength{\csllabelwidth}
+\setlength{\csllabelwidth}{3em}
+\newenvironment{CSLReferences}[2] % #1 hanging-ident, #2 entry spacing
+ {% don't indent paragraphs
+  \setlength{\parindent}{0pt}
+  % turn on hanging indent if param 1 is 1
+  \ifodd #1 \everypar{\setlength{\hangindent}{\cslhangindent}}\ignorespaces\fi
+  % set entry spacing
+  \ifnum #2 > 0
+  \setlength{\parskip}{#2\baselineskip}
+  \fi
+ }%
+ {}
+\usepackage{calc}
+\newcommand{\CSLBlock}[1]{#1\hfill\break}
+\newcommand{\CSLLeftMargin}[1]{\parbox[t]{\csllabelwidth}{#1}}
+\newcommand{\CSLRightInline}[1]{\parbox[t]{\linewidth - \csllabelwidth}{#1}\break}
+\newcommand{\CSLIndent}[1]{\hspace{\cslhangindent}#1}
+
+\title{\LARGE \textbf{Ethnoscientific expertise and knowledge specialisation in 55 traditional cultures}}
+\author{Aaron D. Lightner\footnote{Corresponding author, \href{mailto:aaron.lightner@wsu.edu}{\nolinkurl{aaron.lightner@wsu.edu}}} \and Cynthiann Heckelsmiller \and Edward H. Hagen}
+\date{\emph{Department of Anthropology, Washington State University\\Pullman, WA, USA}}
+
+\begin{document}
+\maketitle
+\begin{abstract}
+People everywhere acquire high levels of conceptual knowledge about their social and natural worlds, which we refer to as \emph{ethnoscientific expertise}. Evolutionary explanations for expertise are still widely debated. We analysed ethnographic text records (N=547) describing ethnoscientific expertise among 55 cultures in the Human Relations Area Files to investigate the mutually compatible roles of collaboration, proprietary knowledge, cultural transmission, honest signalling, and mate provisioning. We found relatively high levels of evidence for collaboration, proprietary knowledge, and cultural transmission, and lower levels of evidence for honest signalling and mate provisioning. In our exploratory analyses, we found that whether expertise involved proprietary vs.~transmitted knowledge depended on the domain of expertise. Specifically, medicinal knowledge was positively associated with secretive and specialised knowledge for resolving uncommon and serious problems, i.e., proprietary knowledge. Motor skill-related expertise, such as subsistence and technological skills, was positively associated with broadly competent and generous teachers, i.e., cultural transmission. We also found that collaborative expertise was central to both of these models, and was generally important across different knowledge and skill domains.
+
+\textbf{Social media summary:} In a cross-cultural study we found that experts with observable motor skills like toolmaking were often teachers, but specialists with conceptual know-how for uncommon problems like illness used secretive knowledge to help clients.
+
+\textbf{Keywords:} Ethnoscience, Expertise, Cultural transmission, Conceptual knowledge, eHRAF
+\end{abstract}
+
+\pagenumbering{gobble}
+
+\newpage
+
+\pagenumbering{arabic}
+
+\hypertarget{introduction}{%
+\section{Introduction}\label{introduction}}
+
+Humans are intuitive scientists (Kuhn, 1989; Szollosi \& Newell, 2020). People everywhere acquire knowledge about fitness-relevant properties of their social and natural worlds (Albuquerque, Medeiros, \& Casas, 2015; Atran, 1993; Gopnik, Meltzoff, \& Kuhl, 2000), sort novel stimuli into classification systems (Ellen, 2006; Lakoff, 1987; Ortony \& Medin, 1989), and infer patterns and causation from noisy phenomena (Cosmides \& Tooby, 1996; Gigerenzer \& Murray, 2015; Sperber, Premack, \& Premack, 1995). Individual knowledge becomes cultural knowledge via social learning (Henrich et al., 2001; Henrich \& McElreath, 2003; Richerson \& Boyd, 2005), and discourse and argumentation (Mercier \& Sperber, 2017).
+
+Existing research has focused on the cognitive, social, and ecological factors influencing the formation and dissemination of \emph{ethnoscientific knowledge}, defined as culturally varying and locally useful bodies of conceptual knowledge about the social and natural world (Atran \& Medin, 2008; see also C. Heintz, 2007). It is less clear, however, how and why some individuals might pursue relatively high levels of domain-specific conceptual knowledge compared to others within their population, which we will refer to as \emph{ethnoscientific expertise}. (``Ethnoscience'' can also refer to a particular Western scientific approach to ethnographic research on indigenous knowledge systems (Sturtevant 1964), which today is usually referred to as cognitive anthropology (Kronenfeld 2011). This is in contrast to our usage, which refers to the \emph{content} of these indigenous knowledge systems, which are often culturally specific.)
+
+\hypertarget{the-conundrum-of-ethnoscientific-expertise}{%
+\subsection{The conundrum of ethnoscientific expertise}\label{the-conundrum-of-ethnoscientific-expertise}}
+
+Levels of knowledge and skill vary for almost any ability. Expertise refers to domain-specific knowledge or skills reliably performed in a way that is superior to that of most other people (Ericsson \& Charness, 1994) (For our purposes, expertise will be defined relative to other people in an individual's local community.) Explanations of how and why experts emerge with extensive knowledge often focus on proximate-level descriptions (Tinbergen, 1963). In the mainstream psychology literature these explanations typically focus on natural ability, favourable circumstances during development, and/or dedicated and systematic practice (Ericsson \& Charness, 1994). In the genetic-developmental literature, these explanations focus on the closely related cognitive, genetic, and developmental aspects of expertise (Dukas, 2019; Plomin, Shakeshaft, McMillan, \& Trzaskowski, 2014). Some consensus exists among scholars about the necessity-but-insufficiency of each of these predisposing factors. Ultimate-level functional and strategic explanations for investing in expertise vs.~other uses of one's time and energy, however, are lacking.
+
+Multiple open questions therefore remain about the evolution of expertise. First, acquiring expertise in one domain, such as botany, zoology, physiology, or meteorology, incurs an opportunity cost due to time and energetic constraints, e.g., by reducing knowledge of other domains and reducing investment in other fitness increasing activities. For example, an adaptive learning strategy could be to acquire practical knowledge about the world during early stages of development, and to divert this investment toward other efforts upon reaching adulthood, such as reproduction and subsistence (i.e., optimising an explore-exploit tradeoff; see Gopnik, 2020).
+
+Second, environments are typically structured in ways that favour simple heuristics (Gigerenzer \& Todd, 2001; Sloman \& Fernbach, 2017). A forager, for example, could discern edible vs.~poisonous berries with simple, locally relevant rules (e.g., discriminating based on colour, taste, or location) that make a complex botanical theory unnecessary for survival. Simple rules can be useful for a range of computationally complex tasks, such as predicting seasonal weather patterns and animal behaviours, or navigating social relationships (Gigerenzer, Hertwig, \& Pachur, 2011). Nevertheless, complex and elaborate theories about these tasks, which might or might not be useful on a day-to-day basis, are well-documented in a variety of ethnoscientific domains across cultures (Albuquerque, Medeiros, \& Casas, 2015). Moreover, across a population, individual knowledge about these elaborate theories often varies (Kronenfeld, 2011), and might only be mastered by relatively few individuals in the population, i.e., experts (Berlin \& Berlin, 2015; Reyes-García et al., 2009).
+
+Finally, it is not clear how expertise relates to cultural transmission. Cultural evolutionary theorists often highlight trait variation and imitation of skills that involve easily observable and transmissible behaviours, such as boat making or food preparation (R. Boyd, Richerson, \& Henrich, 2011; Henrich, 2016). The costs and benefits of adopting easily observable traits, however, can be difficult to evaluate. It can therefore be adaptive to adopt a ``package'' of transmissible traits that are either common in the population, or are exhibited by ``successful'' individuals (Henrich, 2016; Richerson \& Boyd, 2005).
+
+It is less obvious that \emph{unobservable} and mostly \emph{conceptual} knowledge, e.g., about plants, animals, or weather patterns, can be grouped with easily observable behaviours in a single overarching category of transmissible cultural traits (Morin, 2015; Read \& Andersson, 2019). Assumptions about expertise, such as the scope for improving the competence of most individuals in the population on a task, might need to vary according to whether the skills and knowledge are easy to observe, such as motor skills, or more difficult to observe, such as conceptual knowledge, and how often the knowledge and skills are useful (Ericsson \& Charness, 1994).
+
+Further, if expertise requires an individual learning cost (e.g., time spent practicing, innovating, or experimenting to improve a skill), and socially learning from an expert is possible, then evolutionary models show that without additional benefits to the expert, populations with social learning gain no fitness advantages relative to those without it (Rogers, 1988). This suggests that expertise requires a fitness advantage to offset the costs of individual learning (Robert Boyd \& Richerson, 1995).
+
+In short, why do some individuals invest more heavily in ethnoscientific knowledge than others? If a given knowledge domain is not obviously practical or useful on a day-to-day basis, how do experts apply their knowledge, if at all, to increase their inclusive fitness?
+
+\hypertarget{study-aims-investigating-evolutionary-theories-of-expertise-in-the-ethnographic-record}{%
+\subsection{Study aims: Investigating evolutionary theories of expertise in the ethnographic record}\label{study-aims-investigating-evolutionary-theories-of-expertise-in-the-ethnographic-record}}
+
+In this study, which is largely exploratory, we consider multiple theoretical perspectives on knowledge and skill acquisition that might explain expertise as an evolutionary strategy, examine them in the ethnographic record, and then consider if our results warrant a new theory that is specific to expertise. Many previous cultural evolutionary theories have modeled skill acquisition and transmission in practical knowledge domains. These theories emphasise \emph{imitation}, i.e., copying observable behaviours involving substantial motor activity, such as boat making (R. Boyd, Richerson, \& Henrich, 2011) and food preparation (Henrich, 2016).
+
+We diverge from prior studies by emphasising \emph{conceptual} knowledge, a consequence of our focus on ethnoscientific expertise. Ethnoscience in this study includes elaborate systems of knowledge, such as botany or medicine, where concepts are interrelated via rules and principles ``concerning phenomena of the external world and of the human organism'' (Human Relations Area Files World Cultures, 2021). These social or natural principles might (or might not) be used for practical applications with observable motor activity, such as bone-setting, weaving, or hunting. It is therefore inevitable that practical activities will emerge from our systematic search of ethnography. Our restricted search criteria, however, ensures that practical applications are secondary to the ethnoscientific knowledge on which we focus (discussed further in the Methods section).
+
+We also make an important distinction between \emph{products} of knowledge vs.~\emph{know-how}. \emph{Products} refer to observable applications of knowledge, whereas \emph{know-how} refers to the underlying cognitive system or process -- sometimes easily inferred from behaviour and sometimes not -- that reliably yields a desired product. Importantly, \emph{products do not necessarily reveal know-how}. For example, a doctor might know how to diagnose and treat illness. The patient however, cannot gain the know-how used for her diagnosis and treatment by imitating the doctor. That is, if a skill requires complex conceptual knowledge, then observation is often insufficient to acquire that skill (Morin, 2015).
+
+In order to systematically code ethnographic texts for variables that might explain how and why individuals would invest heavily in know-how (conceptual knowledge), we identify influential evolutionary theories of knowledge and skill acquisition. It is important to note that these theories were not necessarily formulated to explain the acquisition of ethnoscientific expertise or conceptual knowledge. We therefore take them as our starting point, operationalising each into five sets of overlapping variables, which we term our ``theoretical models'' (see the SI for extended supporting quotations and further discussion that support our operationalisations).
+
+We evaluate the degree to which each theoretical model is supported by the ethnographic evidence on expertise. These theoretical models are best understood as theoretical \emph{perspectives} based on ``family resemblances,'' however, rather than as formal hypotheses. Our overarching aim is therefore not to simply support one model over the others but instead to start from existing ideas, assess the circumstances under which each model applies, and use exploratory methods to move toward a data-driven theory of conceptual expertise.
+
+\hypertarget{cultural-transmission-model}{%
+\subsubsection{Cultural transmission model}\label{cultural-transmission-model}}
+
+Dual inheritance theorists characterise the human brain as a device for learning, storing, and transmitting cultural information (Muthukrishna, Doebeli, Chudek, \& Henrich, 2018; Richerson \& Boyd, 2005), and argue that social learning is strictly necessary to explain human evolutionary success (R. Boyd, Richerson, \& Henrich, 2011; Henrich, 2016). In the cultural transmission model, experts commit high levels of cultural knowledge to memory, and are a source of socially transmitted knowledge to others in the population (Robert Boyd \& Richerson, 1985), generally in exchange for a fitness benefit (R. Boyd, Richerson, \& Henrich, 2011; Henrich \& Gil-White, 2001). Fitness benefits conferred to experts might include material resources, cooperative partnerships, or services from an apprentice or peer, all of which may contribute to reproductive success (Jiménez \& Mesoudi, 2019; Price \& Van Vugt, 2015).
+
+The \emph{cultural transmission model} also explains \emph{how} skillful persons are identified: prestige is a cue of competence that allows others to selectively learn from, and direct freely conferred deference to, experts (Henrich \& Gil-White, 2001; Henrich \& McElreath, 2003). Prestige might include culturally-specific concepts, symbols, or other conspicuous indications of success (Robert Boyd \& Richerson, 1985; Henrich et al., 2001). For the \emph{cultural transmission model}, experts do not have proprietary or secretive knowledge that they withhold from laypersons, but instead transmit their valuable knowledge based on proximity sought by acolytes, who somehow benefit experts in return. Importantly, valuable knowledge for the \emph{cultural transmission model} should not only include products such as advice or assistance, but know-how that the expert possesses, such as plant knowledge or technological skills that acolytes can use in the future.
+
+\emph{Cultural transmission model} predictions include widely distributed knowledge addressing common, day-to-day problems (e.g., subsistence-related activities, technological skills); experts with reputations for efficacious solutions to those problems; and experts who share know-how with other experts or non-experts, often in the context of mentorship or apprenticeship. Additional predictions include prestigious and high-status experts, deference to experts, experts who have a reputation for generosity and/or are preferred social partners beyond their domains of expertise, and experts with influence beyond their domains of expertise (e.g., medicinal experts who also have political authority).
+
+\hypertarget{proprietary-knowledge-model}{%
+\subsubsection{Proprietary knowledge model}\label{proprietary-knowledge-model}}
+
+Many services provided by experts, such as predictions, advice, or medical care, require underlying know-how that is not readily transmissible without effortful teaching and practice (Ericsson \& Charness, 1994; Hagen \& Garfield, 2019; Morin, 2015). In contrast to the \emph{cultural transmission model}, which emphasises an adaptive capacity for culture and its attendant wide distribution of knowledge (e.g., R. Boyd, Richerson, \& Henrich, 2011), we formulated the proprietary knowledge model, which proposes that experts' conceptual knowledge is not readily transmissible, but restricted to specialists. A central idea for the \emph{proprietary knowledge model} is that experts can use know-how to provide a valuable service or product to other people, who themselves do not possess solutions of their own, and who cannot subsequently transmit this learned information to others. A cost-effective strategy for addressing rare and consequential problems might be to consult a specialised expert in exchange for a complementary service or payment. According to the \emph{proprietary knowledge model}, the value of an expert is determined by his or her relatively rare ability to provide a specific efficacious service (Tooby \& Cosmides, 1996).
+
+The commodities in a \emph{biological market} of mutually beneficial partnerships (Hammerstein and Noe 2016) can include providing information (Bouhlel, Wu, Ilanaki, \& Goldstone, 2018) in exchange for similarly valuable benefits (e.g., payments and continuing patronage to the expert). An expert's high value in this market requires that she is hard to replace (Tooby \& Cosmides, 1996). Hence, according to the \emph{proprietary knowledge model}, services (\emph{products}) are readily shared, but the rare \emph{know-how} used to generate shared outcomes is proprietary, difficult to reverse engineer, and difficult for non-experts to apply and achieve similar outcomes (Hagen \& Garfield, 2019).
+
+\emph{Proprietary knowledge model} predictions include: experts' services successfully conferring some kind of benefit; experts having reputations for efficacy and gaining patronage based on efficacy; narrow specialisation in a domain-specific problem that is uncommon and serious when it arises; rare, secretive know-how employed in an opaque (i.e., not easily observable) process by which products are provided; and material resources received in return as payment.
+
+\hypertarget{collaborative-cognition-model}{%
+\subsubsection{Collaborative cognition model}\label{collaborative-cognition-model}}
+
+The \emph{collaborative cognition model} emphasises that knowledge and expertise are highly social. Activities among multiple specialist types are collaborative on this view, and each expert has complementary roles, insights, and areas of specialisation. Contrary to popular images of science, creativity, and innovations, the \emph{collaborative cognition model} proposes that concepts are not improved by lone geniuses or individual experts, and rarely if ever emerge as fully formed ideas (Mercier \& Sperber, 2017; Sloman \& Fernbach, 2017). Instead, cognitive tasks are often distributed across multiple interdependent roles, allowing experts to invest heavily in some areas of expertise while relying on other experts for information in other areas, a division of cognitive labour (Christophe Heintz, 2004; Hutchins, 2000; Keil, 2003). According to the \emph{collaborative cognition model}, a high level of interaction between cognitive, sociocultural, and ecological factors collectively shape concepts, theories, solutions to domain-specific problems, and even the questions that experts consider in the first place (Nersessian, 2010; Sperber, 1996).
+
+\emph{Collaborative cognition model} predictions include distributed expertise across multiple types of narrow specialist (i.e., a division of labour), collaboration among specialists that collectively produces more knowledge than each individual possesses, and knowledge (know-how) that is shared or exchanged among multiple experts.
+
+\hypertarget{honest-signalling-model}{%
+\subsubsection{Honest signalling model}\label{honest-signalling-model}}
+
+Spence (1978) argued that candidates in a job market can honestly signal their general competence, which is otherwise opaque to employers, with credentials that are relatively less costly to acquire for those with greater general competence. In evolutionary biology, a similar argument suggests that costly traits reliably signal genetic quality in a mating market (Grafen, 1990; Penn \& Számadó, 2020; Zahavi, 1975). Sexual selection based on costly signals of fitness is hypothesised to explain a number of human traits, such as male hunting behaviour and conspicuous meat sharing to gain mating opportunities (Smith \& Bird, 2000). Abilities must not only be successfully broadcast, but typically gain traction in a given cultural milieu in the form of social standing, locally relevant indicators of success, and prestige (Hawkes \& Bliege Bird, 2002; Winegard, Winegard, \& Geary, 2018).
+
+Applied to expertise, the honest signalling model proposes that displays of knowledge serve as a costly signal of genetic quality to prospective mates (i.e., that expertise is less costly to obtain for those with higher genetic quality). On this view, culture largely consists of conspicuous ``courtship adaptations'' (Geher, Camargo, \& O'Rourke, 2008; G. Miller, 2011; G. F. Miller, 1999, p. 81), and creativity and intelligence are relevant underlying traits that are signalled by displays of expertise. This might not only include displays of erudition, however, but also proximate indicators of expert status, such as ornamentation, among other indications of prestige (Cheng and Tracy 2014).
+
+Predictions based on the \emph{honest signaling model} prioritise overt displays of knowledgeability and skill, status and prestige; a short-term mating market in which signals are produced; and experts' access to multiple mates. The \emph{honest signaling model} refers specifically to signalling genetic quality to potential mates, and is not meant to represent a comprehensive model of the role of signalling in all forms of status competition. Hence, fitness indicators, such as culturally-relevant displays of expertise, should be difficult for those with low genetic quality to achieve. Because our data did not have measures of genetic quality, we looked for evidence that acquisition of expertise involved clear costs.
+
+\hypertarget{mate-provisioning-model}{%
+\subsubsection{Mate provisioning model}\label{mate-provisioning-model}}
+
+Human social hierarchies and mate competition involve not only physical formidability, as seen in gorillas and chimpanzees, but also ``prestige'' -- culturally-defined symbols of success that often involve valued skills and knowledge (Barkow, 1989; Maner \& Case, 2016; Van Vugt \& Smith, 2019). Humans also diverged from chimpanzees and gorillas in their shift toward strong male-female pair-bonding and increased paternal investment in offspring (Alger, Hooper, Cox, Stieglitz, \& Kaplan, 2020; H. S. Kaplan, Hooper, \& Gurven, 2009), sexual selection for which would have included individuals choosing mates based on their relatively high levels of resource access and provisioning behaviour (David M. Buss, 1989; Gavrilets, 2012).
+
+In contrast to the short-term mating strategy outlined in the \emph{honest signaling model}, the \emph{mate provisioning model} suggests that expertise is a means of competing for mates by increasing one's ability to provision their offspring either directly, or by controlling resource production (Barkow, Cosmides, \& Tooby, 1992; Stewart-Williams \& Thomas, 2013). That is, mates choose prestigious and high-skilled experts based on their prospects for long-term parental investment and mate provisioning (Barkow, 1989; David M. Buss, 1992; Schmitt, 2008). Researchers have suggested similar hypotheses about sexually selected hunting behaviours among males who preferentially provision food to their kin (David M. Buss, 1995; Hill \& Hurtado, 1989).
+
+Predictions based on the \emph{mate provisioning model} include skill and knowledge acquisition involved in expertise that is best understood in terms of its practical applications, which are preferentially used to acquire resources for mates and offspring (H. Kaplan, Hill, Lancaster, \& Hurtado, 2000). Hence, predictions based on the \emph{mate provisioning model} include status and prestige, mate choice based on male provisioning prospects (e.g., reputations for generosity, commitment to offspring), actual evidence of investment toward offspring, and high levels of mate fidelity.
+
+\hypertarget{similarities-and-differences-among-theoretical-models}{%
+\subsection{Similarities and differences among theoretical models}\label{similarities-and-differences-among-theoretical-models}}
+
+Although many of the predictions described here are specific to one theoretical model, some are compatible with multiple models. We refer to these predictions as model-\emph{specific} and model-\emph{generic}, respectively. Four of the five models (\emph{cultural transmission model}, \emph{proprietary knowledge model}, \emph{mate provisioning model}, \emph{honest signaling model}) are premised on a hierarchy among skill levels, and prestige is central to at least three of these (\emph{cultural transmission model}, \emph{mate provisioning model}, \emph{honest signaling model}). The \emph{cultural transmission model}, \emph{proprietary knowledge model}, \emph{mate provisioning model}, and \emph{honest signaling model} emphasise fitness benefits to experts, but these models largely differ on how and why expertise is beneficial. This is especially clear, for example, in the mate access conferred for prestige described in sexual selection models (\emph{honest signaling model} and \emph{mate provisioning model}) vs.~the deference and resource access in \emph{cultural transmission model}. Resource access is common to the \emph{mate provisioning model}, \emph{cultural transmission model}, and \emph{proprietary knowledge model}, but the latter two make no predictions about provisioning of those resources to mates.
+
+The \emph{proprietary knowledge model} sharply diverges from the \emph{cultural transmission model} by focusing on shared products and secretive know-how, which might be conditionally shared for a direct benefit. The \emph{proprietary knowledge model}, which emphasises \emph{barriers} to knowledge transmission, would nevertheless require some transmission of knowledge systems from experts to novices, meaning that it is at least partially compatible with the \emph{cultural transmission model}.
+
+The \emph{collaborative cognition model} is uniquely compatible with other models. Rather than providing a strictly evolutionary explanation for expertise, it emphasises the distributed and collaborative social structure that might underlie expertise at a group level, in addition to the competition inherent to the other four models.
+
+\hypertarget{methods}{%
+\section{Methods}\label{methods}}
+
+To characterise ethnoscientific expertise and assess the level of cross-cultural support for each theoretical model, we used data from the electronic Human Relations Area Files (eHRAF). The eHRAF is a digitised database of over a million pages of primary ethnographic documents, spanning several centuries, from over 400 cultures around the world. We restricted our search to the Probability Sample Files, a stratified subset of 60 cultures in the eHRAF that includes one randomly selected culture from 60 geographically diverse areas (Naroll, 1967). All documents in the eHRAF are coded at the paragraph level using an Outline of Cultural Materials (OCM), a hierarchically organised coding scheme containing several hundred numeric codes that are assigned to a unique and specific topic (Murdock et al., 2006). Paragraphs usually relate to multiple topics and are therefore usually assigned multiple codes. For example, if a single paragraph explains a cultural theory about plants, animals, and disease, then the paragraph would be coded with OCM codes for ``ethnobotany'' (824), ``ethnozoology'' (825), and ``theory of disease'' (753).
+
+We searched the Probability Sample Files for 68 OCM codes that could plausibly result in descriptions of \emph{conceptual} knowledge in social or natural domains, such as ethnometeorology, ethnophysiology, and genealogy (see the SI for a complete list). We narrowed this search using six keywords that refer to highly knowledgeable experts in those domains, such as ``expert*,'' ``specialist*'' and ``practitioner*'' (where the ``*'' is a wildcard that would match any suffix). We did not include OCM codes or keywords that referred to specific skills, such as woodworking or boatmaking. Focusing on knowledge about the social and natural world, we also did not include OCM codes relating to religious or spiritual leaders in our search terms (but did not exclude them or expertise in supernatural domains from our results). See the SI for our full search parameters. This search resulted in 1595 paragraphs from 483 documents.
+
+\hypertarget{inclusion-criteria-for-text-records}{%
+\subsection{Inclusion criteria for text records}\label{inclusion-criteria-for-text-records}}
+
+Many OCM topics are quite broad, and some paragraphs did not contain any information that was relevant to ethnoscientific expertise. If a description was relevant to ethnoscientific expertise, then we included the contiguous set of paragraphs of which it was part, which we refer to as a ``text record'' henceforth. Because our primary aim was to collect text records about ethnoscientific expertise, we included text records from the ethnographic literature based on two key criteria, which we set out prior to searching: both (1) evidence of ethnoscientific knowledge, and (2) evidence of expertise. In this section, we clarify our inclusion criteria.
+
+First, and for the purposes of including vs.~excluding text, we defined \emph{ethnoscientific knowledge} as conceptual systems where principles about the natural or social world are socially or individually acquired. Although knowledge can be usefully applied to a number of possible types of practical applications (e.g., curing/healing, certain crafts, hunting/trapping, conflict resolution, ethical quandaries), the OCM codes in our search prioritised the underlying conceptual theories that \emph{can} be applied (rather than descriptions of applications themselves).
+
+Second, as evidence of \emph{expertise} we considered indications of within-group variation in knowledgeability that included descriptions of ``experts,'' or individuals who were highly knowledgeable compared to others. If a text record described an expert individual or a specific group of experts, then it met this criterion. If a text record was vague about individual or within-group variation (e.g., ``the Maasai are expert herders''), then it did not meet this criterion and was therefore excluded. Expert knowledge might be specific to a single domain such as plants, animals, meteorology, or social exchange, but it might also be general and include multiple distinct knowledge domains possessed by a single expert and/or multiple types of expert. See the discussion of our coded variables in the SI for details.
+
+Practical skills such as hunting, herding, agriculture, or conflict resolution were not included in our search terms, but did appear in search results. If a conceptual knowledge domain was included in our search (e.g., ethnozoology) and was frequently linked to text records about a skill that was not included in our search (e.g., hunting), then we retained these records because they were an informative result about that knowledge domain being commonly applied to hunting, rather than a simple result of ``hunting'' being included in the search.
+
+The final dataset contained 547 text records discussing ethnoscientific experts and specialists from 257 documents (e.g., books, articles) and 55 cultures.
+
+\hypertarget{operationalising-and-coding-evidence-for-our-theoretical-models}{%
+\subsection{Operationalising and coding evidence for our theoretical models}\label{operationalising-and-coding-evidence-for-our-theoretical-models}}
+
+Each theoretical model was operationalised as a set of coded variables. We coded each text record on the presence or absence of evidence for each of the variables in our theoretical models, and its domain(s) of conceptual knowledge. Domains involved the conceptual knowledge in our search terms, as well as motor-skills and other additional domains found in our results (i.e., not included in our search terms). For example, for an ethnozoology expert with exceptional hunting skill, we coded ``ethnozoology'' and ``hunting'' as expertise domains despite only the former being included in our search terms.
+
+We simplified the wide range of domains in our final dataset by additionally coding each domain of expertise in each text record on three non-mutually exclusive, high-level \emph{domain types}: conceptual, motor skill-related, and/or medicinal domains. Because our inclusion criteria was based on the presence of ethnoscientific expertise, conceptual knowledge was included to some extent in each text record. Nevertheless, there was considerable variation in the extent to which text records described conceptual knowledge. A text record's domain of expertise was therefore coded as ``conceptual'' only if the domain \emph{primarily} involved conceptual knowledge (the \emph{conceptual} domain type refers to ethnoscientific conceptual domains, largely designated by the eHRAF OCM codes; see the SI for details) The distinction between conceptual vs.~motor skills was motivated by how observable a skill might be: Motor skills are observable, whereas conceptual domains often are not. The medicinal domain was also included as a domain type because it was both recurrent in the literature and highly inclusive (e.g., herbalists, pharmaceutical experts, diviners and curing specialists). Importantly, these domain types often co-occurred in single text records. For example, experts with motor skills as boat makers, construction specialists, and woodworkers often had high levels of ethnobotanical knowledge, a conceptual domain. See the SI for more details about the overlap among conceptual, motor, and medicinal domain types.
+
+We coded each text record for presence/absence on each of the 42 variables operationalising our five theoretical models (described above and detailed in the SI). See figure \ref{fig:tilevars} for a list of these variables and their relationships to each theoretical model. Specifically, for each variable and each text record, we coded 1 if there was evidence for the variable and 0 if there was no evidence for the variable. Some text records had evidence against certain variables. For these variables, we therefore created a complementary ``anti-variable'' indicating evidence against that variable (e.g., low status experts were coded as evidence against prestige, or ``anti-prestige''). We term the set of anti-variables complementary to a theoretical model its ``anti-model.'' We also included variables for age, sex, and case vs.~cultural model. The latter indicated if a text record discussed specific individuals who were experts (cases) and/or a general description of domain experts in that culture (cultural models). Finally, we coded two additional \emph{ad hoc} variables that struck the coders as important but were not part of our theoretical models: religious leaders and teaching among kin. The former characterised many experts. The latter was an important special case of the \emph{cultural transmission model} variable \emph{experts teaching others} (but kinship is not a feature of the \emph{cultural transmission model}, so we did not include this variable in the \emph{cultural transmission model}). See the SI for coding examples and other details.
+
+\begin{figure}
+
+{\centering \includegraphics{conceptual-experts-paper_files/figure-latex/tilevars-1} 
+
+}
+
+\caption{Coded variables corresponding to predictions outlined in our theoretical models. Variables are listed along the y-axis, and each theoretical model is listed with its opposing model along the x-axis. Filled cells indicate which variables are included in each theoretical model. Purple cells indicate a variable that is unique to one theoretical model (model-specific), and orange cells indicate a variable that is general to multiple theoretical models (model-generic).}\label{fig:tilevars}
+\end{figure}
+
+The first and second authors independently coded for presence/absence (1/0) of evidence for each variable on each text record. The second author was familiar with relevant theories but blind to specific hypotheses in this study, and the first author was not blind to the study hypotheses. Results of the independently coded datasets were a 88.1\% match with a Cohen's kappa indicating moderate agreement (\(k=\) 0.48). See the SI for more details about interrater reliability. Afterward, both coders discussed and reconciled all disagreements to produce the coded dataset used in our analyses.
+
+Finally, each of the Probability Sample Files cultures in our search was coded for geographic region and mode of subsistence, which we obtained from the eHRAF (shown in figure \ref{fig:worldmap}).
+
+\hypertarget{statistical-analyses}{%
+\subsection{Statistical analyses}\label{statistical-analyses}}
+
+Our data comprised a 547 row by 42 column binary matrix of 0's and 1's, where each row was one text record and each column was one variable (0: no evidence; 1: evidence for). Each text record belonged to one culture (i.e., no text records discussed multiple cultures); thus, text records were nested within authors, who were nested within cultures.
+
+Our first analytical goal was to explore which variables clustered together (i.e., variables for which evidence tended to co-occur in text records), as a means to assess the extent to which the structure of the data corresponded to our theoretical constructs. Our second analytical goal was to more formally assess the extent to which the data supported each theoretical model by determining the level of evidence for each variable (i.e., the mean of each column), the proportion of cultures with at least some evidence for each variable, and the total evidence for each model (as described in detail later). Our third analytical goal was to explore the extent to which the variables and each of the theoretical models were associated with three broad types of knowledge: medicinal, motor skills, and conceptual knowledge domains.
+
+\hypertarget{goal-1-exploring-the-structure-in-our-dataset}{%
+\subsubsection{Goal 1: Exploring the structure in our dataset}\label{goal-1-exploring-the-structure-in-our-dataset}}
+
+To explore inherent structure in our entire binary data matrix, i.e., ignoring our \emph{a priori} theoretical models, we used two different clustering methods.
+
+In the first clustering method, we visualised the entire binary matrix with a heatmap (dark colour = 0, light colour = 1). We ordered the rows and columns, so that ``similar'' rows were adjacent, and ``similar'' columns were adjacent. Similarity between two row vectors or two column vectors was defined as the angle between the vectors when projected onto the first two principal components of the entire matrix, which approximates the correlation between the vectors. Specifically, the ordering was determined by a principal components analysis (PCA) angle seriation method (Hahsler et al., 2020).
+
+To use row ordering as an example, this method conducts a PCA on the row vectors, projects each row vector onto the first two principal components, and then orders each row by the angle between the row vector and the first principal component (smallest to largest; see Friendly 2002). It then splits this ordering by the largest ``jump'' between adjacent angles (specifically, the absolute value of the difference between adjacent angles), and rearranges these two split orderings so that the largest jump is at the end of the entire ordering. Column ordering is similarly determined, but the PCA is instead conducted on the column vectors. The result is that similar rows (text records) and columns (variables) in the heatmap are adjacent (Friendly and Kwan 2002; Hahsler 2020).
+
+The second clustering method is based on another measure of similarity among our variables. Here, we computed the square matrix of all pairwise binary distances between column vectors, where binary distance is defined as the proportion of element pairs (i.e., (0, 0), (0, 1), (1, 0), or (1, 1)) in which only one element = 1, amongst the pairs in which at least one element = 1. A binary distance = 0 therefore means that two variables both had evidence in exactly the same text records. A binary distance = 1 means that two variables never had evidence in the same text records. The resulting matrix can be conceptualised as an adjacency matrix, which defines a weighted graph \(G\), where each vertex is a variable and each weighted edge is the distance between these variables.
+
+We then computed the minimum spanning tree of this distance matrix, a subgraph of \(G\) in which every node is connected in a single path that minimises the total weighted path distance without creating any loops (i.e., with no closed paths) (Dijkstra, 1959; Prim, 1957; Zahn, 1971). As a result, only similar variables (the vertices) are connected to each other in the minimum spanning tree. We then identified ``clusters'' of variables by visual inspection of the minimum spanning tree, seeking groups of adjacent variables that were conceptually related. Given the subjectivity of cluster identification, we perform this step after completing the remaining goals.
+
+\hypertarget{goal-2-assessing-how-the-evidence-supports-different-theoretical-perspectives}{%
+\subsubsection{Goal 2: Assessing how the evidence supports different theoretical perspectives}\label{goal-2-assessing-how-the-evidence-supports-different-theoretical-perspectives}}
+
+Each theoretical model was operationalised as a set of coded variables. These sets of variables overlapped to some degree, indicating overlap between the theoretical models. To assess each theoretical model, we determined the proportion of text records that supported each of its binary variables (i.e., the proportion of 1's). Because multiple text records often came from the same document, and multiple documents often reported on the same culture, the text records from an ethnographer who focused on, e.g., uncommon and serious medical problems, would have a misleadingly high proportion of evidence for the ``uncommon and serious problem'' variable. It was therefore necessary to account for the hierarchical structure of our data.
+
+Specifically, we fit an intercept-only generalised linear mixed effects logistic regression model (GLMM) for each binary variable, with random intercepts for authors nested within cultures. We fit 42 models, one for each binary variable, using all 547 data points, to predict for each text record whether the variable was 0 or 1, adjusting for the structure of the data. The model structure for each variable's proportion of text record-level evidence was therefore as follows:
+
+\[
+\begin{aligned}
+  \operatorname{y}_{i}  &\sim \operatorname{Binomial}(n = 1, \operatorname{prob}_{\operatorname{y} = 1} = \widehat{P}) \\
+    \log\left[\frac{\hat{P}}{1 - \hat{P}} \right] &=\alpha_{j[i],k[i]} \\
+    \alpha_{j}  &\sim N \left(\mu_{\alpha_{j}}, \sigma^2_{\alpha_{j}} \right)
+    \text{, for author:culture j = 1,} \dots \text{, J} \\
+    \alpha_{k}  &\sim N \left(\mu_{\alpha_{k}}, \sigma^2_{\alpha_{k}} \right)
+    \text{, for culture k = 1,} \dots \text{, K}
+\end{aligned}
+\]
+
+where the value of \(\operatorname{y}_{i}\) (and its 95\% CI) represents the proportion of text records with evidence for a given variable \(i\), adjusted for the hierarchical structure of the data.
+
+To compare theoretical models, we computed a ``total model score'' as the proportion of evidence for the model in each text record. Specifically, we summed the model variables in each text record and divided by the number of variables. The ``weight'' of this value was the number of variables. For example, the \emph{mate provisioning model} has 8 variables. The total score for this model in each text record was the sum of these variables in each text record, divided by 8 (with weight = 8). This proportion was the outcome variable. The mean proportion and its 95\% CI were computed identically to the GLMM structure shown above. Theoretical models with a higher total model score were judged to have more support. (Note that the ``anti'' models, i.e., the models shown in figure \ref{fig:tilevars}, with variables that refuted its corresponding theoretical models, were analysed identically to the theoretical models.)
+
+We also examined evidence for each variable at the culture level, i.e., the simple proportion of cultures with at least one text record supporting each variable, with 95\% confidence intervals for the proportion computed with cluster bootstrapping (i.e., first resampling cultures, then resampling authors within cultures). We converted all proportions and their confidence intervals into percentages, which we reported as the variable's level of support.
+
+\hypertarget{goal-3-exploring-how-support-for-variables-were-associated-with-presence-of-domain-types}{%
+\subsubsection{Goal 3: Exploring how support for variables were associated with presence of domain types}\label{goal-3-exploring-how-support-for-variables-were-associated-with-presence-of-domain-types}}
+
+At the text record level only, we explored the extent to which evidence for our three high-level domain types (conceptual, motor, and medicine) was associated with evidence for each of our 42 variables (e.g., prestige, teaching, secretive knowledge). Specifically, we fit three logistic regression models with our three high-level domain types as binary outcome variables and, in each model, our theoretical model variables as predictors. (Prior to fitting, we removed variables that were \textgreater95\% zeros, i.e., for which there was almost no evidence; otherwise these variables had spuriously large estimates. See the SI for more details, and a discussion of our rationale and filtering process.) Because inclusion of many predictors risks overfitting, we used \emph{elasticnet} regression (Friedman et al., 2021), a popular type of penalised regression that was developed for use in situations where the number of predictors, \(p\) is large relative to the number of observations, \(n\) (see SI for a brief description). We used the ``lasso'' penalty, which sets some coefficients to 0, with the non-zero coefficients representing the ``best'' predictors, given the limitations of the data. As in a standard logistic regression, the coefficients are log odds, which we transformed to odds ratios, i.e., the ratio of the odds that a text record has evidence for the outcome (domain type) if it has evidence for the predictor variable to the odds that it has evidence for the outcome if it does not have evidence for the predictor variable. This analysis will therefore identify three subsets of variables that are most closely associated with the conceptual, motor, and medicinal domains. Note that this model cannot include random effects (i.e., cannot adjust for the hierarchical structure in our data).
+
+We then assessed the association of our five theoretical models with the three domain types as follows. First, we computed text record-level model scores as the proportion of evidence for each model in each text record. For example, the \emph{collaborative cognition model} comprised four variables. If a text record had evidence for all four \emph{collaborative cognition model} variables, its text record-level \emph{collaborative cognition model} model score was 1; if it had evidence for two \emph{collaborative cognition model} variables, its \emph{collaborative cognition model} score was 0.5. We computed text record-level model scores similarly for the other four theoretical models.
+
+We then fit three generalised linear mixed effects logistic regression models, each predicting the presence/absence of evidence for one domain type (medicinal, motor, and conceptual) as a function of the five text record-level model scores. Similar to the GLMM described above, we included random intercepts for authors nested within cultures. The estimated coefficients of these three models would then represent the association between the evidence for each theoretical model in each text record with the evidence for the domain type in each text record.
+
+All data and analysis code are available at: \url{https://github.com/alightner/conceptualExpertsHRAF}.
+
+\hypertarget{results}{%
+\section{Results}\label{results}}
+
+The dataset contained 547 text records, and we found evidence supporting one or more variables from our theoretical models in 528 (97\%) of these records. Each text record had an average of 5 variables coded as present, with 95\% of text records containing evidence for 10 or fewer variables (median was 4 present per text record, \(SD\) = 3.3, min = 1, max = 25). The geographic distribution of the cultures in this sample, along with their subsistence strategy and number of text records, are shown in figure \ref{fig:worldmap}. We did not find evidence for ethnoscientific expertise in 5 of the 60 cultures in the Probability Sample Files. Text records per culture ranged from 1 to 46 with a median of 7. In total, our text records included 115 cases describing specific experts and 473 cultural models, i.e., general descriptions of experts. Publication dates of the 257 documents from which the text records came ranged from 1704 to 2000, with 99\% of documents published during the 20th century (median year was 1968). See the SI for details and text analyses.
+
+Sex was unknown in 55\% of all text records. Of the 45\% of text records that identified at least one sex, 82\% included males (37\% of all text records), 42\% included females (19\% of all text records), 22\% included both males and females within the same text (10\% of all text records), and 15\% described specialist roles that were exclusive to males and/or females (7\% of all text records). (About 2\% of all text records described exclusively male experts, and about 2\% described exclusively female experts.) Individuals pursuing expertise in ethnoscientific domains were described as older or elderly adults in 13\% of all text records, whereas 5\% described younger adults and 4\% described children or adolescents. Age was unknown in 86\% of our text records (for age categories, the percentages in each category and the percentages of uninformative records add to values greater than 100, because some text records described experts in multiple age categories within the same record).
+
+\begin{landscape}
+
+\begin{figure}
+
+{\centering \includegraphics{conceptual-experts-paper_files/figure-latex/worldmap-1} 
+
+}
+
+\caption{Geographic region of each culture included in our dataset. Colours and shapes indicate subsistence strategy for each cultural group, and sizes indicate the number of text records for each culture in our dataset.}\label{fig:worldmap}
+\end{figure}
+
+\end{landscape}
+
+\hypertarget{exploring-structure-in-the-data-matrix}{%
+\subsection{Exploring structure in the data matrix}\label{exploring-structure-in-the-data-matrix}}
+
+We visualised our dataset with a heatmap, ordering the rows and columns using the PCA angle seriation method (Hahsler et al., 2020). See figure \ref{fig:heatPCA}. The heatmap revealed that there was considerable evidence for some variables (top) and much less evidence for others (bottom). The seriation method also shows two partially overlapping clusters among our well-supported variables. In the left cluster of text records, expertise includes hierarchies in knowledge or skill level, widespread knowledge, assistance with common problems or activities, and experts who teach other people their skill. In the right cluster of text records, expertise includes assistance with uncommon and serious problems, patronage based on efficacious services provided by experts, and evidence of success in an expert's task domain. These clusters of text records are somewhat interpretable as primarily relating to the \emph{cultural transmission model} (left) and the \emph{proprietary knowledge model} (right), although it is worth noting that they overlap with each other, and the left cluster is diffuse and includes high levels of support in a number of columns that are not specific to the \emph{cultural transmission model}. Also, the partial overlap between these clusters hinges, in part, on reputations for efficacy and distributed experts among multiple experts. The latter, which was well-supported in both of these clusters, was central to the \emph{collaborative cognition model}.
+
+\begin{figure}
+
+{\centering \includegraphics{conceptual-experts-paper_files/figure-latex/heatPCA-1} 
+
+}
+
+\caption{Heatmap visualising the coded dataset based on presence (light cells) vs. absence (dark cells) of evidence for each variable in each text record. For readability, the dataset shown here is transposed, i.e., each row represents a variable and each column represents a single text record. Rows and columns were ordered using the PCA angle seriation method. See text for details.}\label{fig:heatPCA}
+\end{figure}
+
+\hypertarget{knowledge-domains-and-types-of-skill}{%
+\subsection{Knowledge domains and types of skill}\label{knowledge-domains-and-types-of-skill}}
+
+Our search for ethnoscientific experts yielded a variety of knowledge and skill domains, many of which were not included in our search query. Among the conceptual knowledge domains that we included in our search, ethnomedical specialists, largely resulting from our search for theories of disease, were the most common. Expertise in ethnobotany, ethnozoology, ethnopsychology, and healing injuries were also relatively common, and frequently co-occurred in text records describing medicinal specialists. However, some knowledge or skill domains that we did \emph{not} include in our search query reliably co-occurred with domains that we did include. Text records describing medicinal specialists, for example, often included descriptions of divination, which was not specified in our search terms. See figure \ref{fig:domainplot}.
+
+Some domains tended to co-occur more frequently than others: Medicine, ethnobotany, and ethnozoology often co-occurred, for example, forming a ``cluster,'' but medicine, ethnopsychology, and divination also frequently co-occurred, forming a different ``cluster.'' Social expertise, an inclusive category motivated by the ethnosociology OCM code (e.g., conflict resolution, intergroup relations), similarly clustered with traditional domains, such as mythology and norms of behaviour, and with traditional history and law. Skills relating to a culture's subsistence strategy (not included in our search query) clustered with ethnozoology, ethnobotany, and ethnometeorology, and often described use of knowledge to improve subsistence outcomes (e.g., ethnozoology among hunter-gatherers, ethnobotany among agriculturalists, and ethnometeorology among pastoralists and horticulturalists; see figure \ref{fig:domainplot}).
+
+\begin{landscape}
+
+\begin{figure}
+
+{\centering \includegraphics{conceptual-experts-paper_files/figure-latex/domainplot-1} 
+
+}
+
+\caption{Graph representing commonly occurring domains of knowledge and skill that occurred in text records in our dataset. Vertices indicate domains that occurred in at least ten text records, and vertex size corresponds to the number of text records including that domain. Vertex colours indicate whether or not the domain was included in our original search query. Each edge indicates that a pair of knowledge/skill domains co-occurred in at least one text record. Edge widths correspond to the frequency with which each domain pair co-occurred (as determined by the number of text records describing them together, normalised by the maximum frequency = 113).}\label{fig:domainplot}
+\end{figure}
+
+\end{landscape}
+
+\hypertarget{theoretical-model-results-at-the-text-record-and-culture-levels}{%
+\subsection{Theoretical model results at the text record and culture levels}\label{theoretical-model-results-at-the-text-record-and-culture-levels}}
+
+Support for each variable was determined by the percentage of text records containing evidence for it (text record level support), and the percentage of cultures containing at least one text record with evidence for each of the same variables (culture level support). Each ``total model score'' was the percentage of text record level support across all variables defining a model. (See the Methods section for details.) As indicated in figures \ref{fig:tilevars} and \ref{fig:maintextplot}, some variables were consistent with multiple theoretical models, and were therefore included in multiple total model scores. As we also show in figure \ref{fig:tilevars} and the Methods section, some text records contained evidence that explicitly refuted a theoretical model, which we coded as an anti-model. Anti-models were analyzed identically to the other theoretical models.
+
+Based on the total model scores, the \emph{collaborative cognition model} received the highest level of support at the text record level (25.6\%) but it also had considerable evidence against it (13.1\%). The \emph{proprietary knowledge model} and \emph{cultural transmission model} were both relatively well-supported and made largely distinct predictions, indicating mixed support for each (\emph{proprietary knowledge model}: 19.4\%, \emph{cultural transmission model}: 14.5\%). Although the \emph{honest signaling model} and \emph{mate provisioning model} received similar but relatively low levels of support (\emph{honest signaling model}: 6.6\%, \emph{mate provisioning model}: 6.2\%), evidence against the \emph{honest signaling model} and \emph{mate provisioning model} was also relatively low (anti-\emph{honest signaling model}: 6\%, anti-\emph{mate provisioning model}: 1.5\%). See figure \ref{fig:maintextplot} for text record level support, culture level support, and total model scores. At the culture level, we found no meaningful variation in model scores by geographic region or subsistence strategy. See the SI for details.
+
+\begin{figure}
+
+{\centering \includegraphics{conceptual-experts-paper_files/figure-latex/maintextplot-1} 
+
+}
+
+\caption{Support for each variable, faceted by theoretical model. Points represent the percentage of evidence for that variable (the fixed-effect intercept from a generalised linear mixed effects model), and colours indicate whether that percentage is at the level of text record (percentage of text records with evidence), culture (percentage of cultures with evidence), or total model score (percentage of text records with evidence for any variable defining a given model). Solid colours indicate variables that are specific to theoretical models, whereas faded colours indicate variables that are generic, i.e., included in more than one theoretical model. Error bars are 95\% confidence intervals of the fixed-effect intercept from a generalised linear mixed model, with random intercepts for author nested within culture.}\label{fig:maintextplot}
+\end{figure}
+
+\hypertarget{exploring-associations-between-the-variables-and-conceptual-medicinal-and-motor-domains}{%
+\subsection{Exploring associations between the variables and conceptual, medicinal, and motor domains}\label{exploring-associations-between-the-variables-and-conceptual-medicinal-and-motor-domains}}
+
+At the text record level, we fit three elasticnet logistic regression models to explore which model variables in figure \ref{fig:heatPCA} (as predictors) were associated with evidence for each of our three high-level domain types (as outcomes), i.e., medicinal domains, conceptual domains (e.g., ethnobotany, ethnometeorology, genealogy), and motor skill-related domains (e.g., construction, boat making, art/crafts).
+
+The coefficients of each of our three elasticnet regression models are shown in figure \ref{fig:domainregression}. The elasticnet regression models showed two key results. First, evidence of experts assisting with routine or common problems was strongly associated with individuals working in motor skill-related domains, such as woodworking, crafting, and subsistence. (To a much lesser extent, motor skill-related domains were also positively associated with some uncommon and serious problems, such as bone-setting after an injury.) Second, medicinal domains were positively associated with assistance with uncommon and serious problems, and positively associated with highly specialised knowledge among multiple types of expert. Medicinal domains were negatively associated with widespread or readily accessible knowledge, and in contrast with motor skills, medicine was also negatively associated with assistance with common problems. A handful of variables were weakly positively or negatively associated with conceptual domains, which frequently overlapped with medicinal domains and, to a lesser extent, motor skill-related domains (figure \ref{fig:domainplot}). However, no clear pattern emerged with conceptual domains as the outcome variable (figure \ref{fig:domainregression}).
+
+\begin{landscape}
+
+\begin{figure}
+
+{\centering \includegraphics{conceptual-experts-paper_files/figure-latex/domainregression-1} 
+
+}
+
+\caption{Coefficients for the "best predictors" of each domain type in our three elasticnet logistic regression models. Each facet shows the coefficients of each regression model. Each domain type, shown in the facet labels, was the outcome variable, and each variable along the y-axes was a best predictor in its regression model (i.e., had a non-zero coefficient). Regression coefficients are reported as odds ratios (x-axes), and error bars are 95\% confidence intervals. Note that each x-axis is log-scaled.}\label{fig:domainregression}
+\end{figure}
+
+\end{landscape}
+
+\hypertarget{exploring-associations-between-the-theoretical-models-and-conceptual-medicinal-and-motor-domains}{%
+\subsection{Exploring associations between the theoretical models and conceptual, medicinal, and motor domains}\label{exploring-associations-between-the-theoretical-models-and-conceptual-medicinal-and-motor-domains}}
+
+To assess associations of our five theoretical models with each of the three domains, we first computed text record-level models scores for each of our five theoretical models to determine how well each text record supported each model (see Methods section). We then fit three separate generalised linear mixed effects logistic regression models, with domain types as outcomes and text record-level model scores (\emph{collaborative cognition model}, \emph{cultural transmission model}, \emph{proprietary knowledge model}, \emph{honest signaling model}, and \emph{mate provisioning model}) as predictors. The results of these regression models showed that the \emph{cultural transmission model} was positively associated with motor skill-related domains and negatively associated with medicinal domains, whereas the \emph{proprietary knowledge model} was positively associated with medicinal domains (figure \ref{fig:domainModels}).
+
+\begin{figure}
+\centering
+\includegraphics{conceptual-experts-paper_files/figure-latex/domainModels-1.pdf}
+\caption{\label{fig:domainModels}Regression coefficients for three generalised linear mixed effects logistic regression models of each domain type (conceptual, medicine, motor) as a function of theoretical model scores at the text record level. Theoretical model names are listed along the y-axis, and domain types are shown in the facet labels. Estimates are reported in log odds, and are shown on the x-axis. Error bars are 95\% confidence intervals.}
+\end{figure}
+
+\hypertarget{minimum-spanning-tree-exploring-structure-among-the-variables}{%
+\subsection{Minimum spanning tree: Exploring structure among the variables}\label{minimum-spanning-tree-exploring-structure-among-the-variables}}
+
+In our minimum spanning tree, variable clusters only partially mapped onto our \emph{a priori} theoretical models. See figure \ref{fig:minspantree}. Specifically, we found a variable cluster that we characterise as a ``market for specialists,'' which includes two subclusters: efficacious services and knowledge restrictions relevant to the \emph{proprietary knowledge model}. The variables in this cluster had high levels of evidence across text records (indicated by the size of the nodes).
+
+A second cluster included experts with prestige, deference, reputations for generosity, influence and skill outside of one's area of expertise (i.e., ``broad generalists''), and expert competition. We interpret this cluster, which also had high levels of evidence across text records, as support for the prestige and ``information goods'' theories associated with the \emph{cultural transmission model} (Henrich \& Gil-White, 2001).
+
+Further, we found variable clusters that resembled aspects of the \emph{honest signaling model} and \emph{mate provisioning model}, although the levels of evidence across text records was relatively low. A final cluster appeared to relate largely to shamans and low status occupational specialisations. See the SI for details and examples of text records supporting this interpretation.
+
+\begin{landscape}
+
+\begin{figure}
+
+{\centering \includegraphics{conceptual-experts-paper_files/figure-latex/minspantree-1} 
+
+}
+
+\caption{Minimum spanning tree of the variable binary distance matrix. Vertices represent variables, vertex sizes correspond to levels of text record support for each variable, and vertex colours to whether or not the variable is model specific vs. model generic. Edge lengths represent binary distances between variables. Annotations refer to our interpretations of each cluster.}\label{fig:minspantree}
+\end{figure}
+
+\end{landscape}
+
+We re-ran all of the foregoing analyses separately by sex to explore possible sex-specific patterns. We found no major sex-specific patterns, except that three variables -- prestige, public performances, and narrow specialisation -- were associated with evidence for male experts. See the SI for a more detailed analysis of sex differences.
+
+\hypertarget{discussion}{%
+\section{Discussion}\label{discussion}}
+
+In this study, we considered the extent to which multiple evolutionary perspectives on knowledge and skill acquisition explain ethnoscientific expertise, and whether our exploratory results would suggest a new theory of expertise.
+
+Ethnoscientific experts were skilled in a variety of conceptual domains, with medicinal expertise being especially common. Although we restricted our search query and post-search filtering to only include text records describing ethnoscientific expertise, these text records also frequently included discussion of multiple knowledge and skill domains, conceptual and/or motor skill-related, such as boat making, woodworking, subsistence, and construction (figure \ref{fig:domainplot}).
+
+Our analyses were generally supportive of three theoretical models developed from the existing literature on the acquisition of knowledge and skill: the collaborative cognition model, the proprietary knowledge model, and the \emph{cultural transmission model}. The \emph{proprietary knowledge model} and \emph{cultural transmission model} make some contrasting predictions, however, and the anti-\emph{collaborative cognition model} (evidence against \emph{collaborative cognition model}) also received a moderate level of support. The \emph{collaborative cognition model}, \emph{proprietary knowledge model}, and \emph{cultural transmission model} therefore received mixed support overall. We found similarly mixed support for the \emph{honest signalling model} and \emph{mate provisioning model}, but in general there was much less evidence in the text records for these models, and for their counterparts (anti-\emph{honest signaling model} and anti-\emph{mate provisioning model}) (figure \ref{fig:maintextplot}). The mixed support for our \emph{a priori} models indicates that reformulation is in order.
+
+\hypertarget{toward-a-data-driven-theory-of-expertise}{%
+\subsection{Toward a data-driven theory of expertise}\label{toward-a-data-driven-theory-of-expertise}}
+
+Our exploratory analyses revealed factors that were associated with greater or lesser support for the three models with greatest support overall: the \emph{collaborative cognition model}, \emph{proprietary knowledge model}, and \emph{cultural transmission model}. Here, we distill these insights as a first step toward the development of a more general theory of ethnoscientific expertise.
+
+Our first exploratory analysis revealed two clusters of text records associated with two clusters of variables. The upper left quadrant of the heatmap (figure \ref{fig:heatPCA}) mostly involved text records that discussed hierarchies of experts that assisted with common problems in widespread knowledge domains, who had prestige, and taught others. This cluster included support for many \emph{cultural transmission model} variables, among others. The upper right quadrant, on the other hand, mostly involved text records that discussed experts who \emph{assist with serious, uncommon problems} and who were \emph{patronised based on their efficacy}. This cluster included support for many \emph{proprietary knowledge model} variables. There was considerable overlap between these clusters, however, which hinged on high levels of support in each cluster for the presence of experts with \emph{reputations for efficacious services}, \emph{narrow specialisation}, and \emph{distributed knowledge among multiple experts}. Distributed knowledge and narrow specialisation were motivated by the \emph{collaborative cognition model}, and their support is consistent with the idea that distributed and complementary social structures are key factors for both widely transmitted knowledge and proprietary knowledge. The \emph{collaborative cognition model}, in other words, seems to serve as a bridge between the \emph{proprietary knowledge model} and \emph{cultural transmission model}.
+
+In the text records, knowledge domains and their characteristics (e.g., hidden and conceptual vs.~observable and motor skill-related) varied considerably. Nevertheless, the two foregoing clusters seemed to be distinguished by an emphasis on motor-skills (left cluster) vs medicinal skills (right cluster). We therefore categorised specific expertise domains in each text record (figure \ref{fig:domainplot}) into more general domain types: motor skills, medicinal knowledge, and/or our ethnoscientific domains that were primarily conceptual knowledge.
+
+Our elasticnet regression models found that evidence supporting the \emph{cultural transmission model} and \emph{proprietary knowledge model} was largely conditional on these domain types (figures \ref{fig:domainregression} and \ref{fig:domainModels}). Specifically, two variables associated with the \emph{proprietary knowledge model} (\emph{assists with uncommon and serious problems} and \emph{distributed knowledge across multiple experts}) were positively associated with medicine, whereas two variables associated with evidence for the \emph{cultural transmission model} (and against the \emph{proprietary knowledge model}) -- \emph{knowledge domain that is widespread} and \emph{assists with common and routine problems} -- were negatively associated with medicinal domains. Evidence for assistance with common problems (from the \emph{cultural transmission model}), such as subsistence and construction, was strongly associated with motor skill-related domains. Assistance with uncommon and serious problems was also associated with motor skill-related domains (albeit to a much lesser extent), but these text records involved bone-setting and similar types of injury healing (see figure \ref{fig:domainregression}).
+
+Aggregating text record-level evidence for each variable into total model scores showed a similar trend: Support for the \emph{cultural transmission model} was positively associated with expertise in motor skill-related domains, whereas support for the \emph{proprietary knowledge model} was positively associated with expertise in medicinal domains (figure \ref{fig:domainModels}). In general, medicinal domains were occasionally linked to motor skill-related domains, such as injury healing, but they were far more often linked to conceptual and non-motor skill-related domains, such as botany, psychology, and, more surprisingly, divination during times of uncertainty (figure \ref{fig:domainplot}).
+
+Our finer-grained exploratory analysis of structure in our data matrix, using a graph-based clustering method (minimum spanning tree), further clarified the relationship between the \emph{proprietary knowledge model}, \emph{collaborative cognition model}, and \emph{cultural transmission model} seen in our heatmap. In the minimum spanning tree, our variables clustered in ways that largely, but not completely, corresponded to our theoretical models (figure \ref{fig:minspantree}). A large and relatively well-supported cluster contained associations among prestige, deference, reputations for generosity, and high competence outside of one's area of expertise (termed ``broad generalists''). We interpreted this cluster as support for the ``prestige and information goods'' theories associated with the \emph{cultural transmission model} (Henrich \& Gil-White, 2001). A separate cluster, which was also well-supported, resembled what we call a ``market for specialists,'' which itself included two subclusters: efficacious services and knowledge restrictions that are relevant to the \emph{proprietary knowledge model}.
+
+Social dimensions of expertise, some part of the \emph{collaborative cognition model}, served as ``hubs'' linking the \emph{cultural transmission model} and \emph{proprietary knowledge model} clusters together: distributed expertise among multiple complementary expert roles and knowledge and skill hierarchies were each situated between the \emph{market for specialists} and \emph{prestige and information goods} clusters. Collaboration among experts was directly adjacent to these hubs, and occurred more frequently than competition overall (competitive experts in 8\% of text records vs.~collaborative experts in 15\%).
+
+The \emph{skill level hierarchy} hub of the minimum spanning tree also connected the branches that largely corresponded to the \emph{honest signaling model} and \emph{mate provisioning model}. These are labelled as ``access to mates'' and ``mate and kin provisioning'' in figure \ref{fig:minspantree}, respectively, and are difficult to draw inferences from given the low levels of evidence for their constituent variables.
+
+Interestingly, a separate cluster that our theoretical models did not anticipate appeared to relate largely to shamans and low status occupational specialisations. (See the SI for details about how we arrived at this interpretation.) Although this particular cluster consisted of low levels of support, ethnoscientific experts were also religious or spiritual leaders, such as priests or shamans, in 19\% of all of our text records. Future research will further address this trend by investigating how religious leadership and ethnoscientific expertise might share a common evolutionary explanation (Lightner, Heckelsmiller, and Hagen in prep; see also Garfield, Syme, \& Hagen, 2020).
+
+We now focus on the major \emph{market specialists} and \emph{prestige and information goods} branches, and their linking hubs, to more thoroughly evaluate their theoretical implications and interrelationships, in light of the domain specificity revealed by our exploratory analyses.
+
+\hypertarget{a-market-for-specialists}{%
+\subsection{A market for specialists}\label{a-market-for-specialists}}
+
+The \emph{proprietary knowledge model} was more associated with ethnomedical specialists who were consulted during a crisis, sometimes using divination (figure \ref{fig:domainplot}), whereas the \emph{cultural transmission model} was associated with observable motor skills, knowledge that is widely distributed in lesser forms among the population (beyond the experts), and commonly occurring problems (figures \ref{fig:heatPCA}, \ref{fig:domainregression}, and \ref{fig:domainModels}).
+
+If a problem is rare but serious, then for the average individual, the cost of learning to resolve it might be greater than the cost of paying a specialist to do so, if and when that problem arises. Outsourcing uncommon but serious problems creates a demand for solutions, and thus, a market niche for specialising in those solutions. Specialised knowledge can therefore allow some individuals to gain a fitness advantage (e.g., prestige, material resources, beneficial partnerships) in exchange for their services, or \emph{products} (Hammerstein \& Noë, 2016; Price \& Van Vugt, 2015; Sugiyama \& Sugiyama, 2003; Tooby \& Cosmides, 1996), what Hagen \& Garfield (2019) refer to as computational services. If the market value of those products is undermined by sharing the underlying know-how used to generate them, then a beneficial strategy for specialists would be to keep their knowledge hidden, or proprietary.
+
+This creates an apparent contradiction: The existence of cumulative cultural knowledge in \emph{any} type of domain, proprietary or not, presupposes transmitted knowledge (Legare, 2017; Tennie, Call, \& Tomasello, 2009). That is, cultural evolution literature correctly emphasises that transmitted knowledge is imperative for cumulative culture (Robert Boyd \& Richerson, 1996; R. Boyd, Richerson, \& Henrich, 2011; cf. Pinker, 2010). As our results clarify, however, it would be a mistake to conclude that transmitted and proprietary knowledge are at loggerheads, or that evidence for the \emph{proprietary knowledge model} is evidence against the \emph{cultural transmission model} (and vice versa). Instead, as we argue next, the relative importance of the \emph{cultural transmission model} and \emph{proprietary knowledge model} depends on properties of an expert's task domain.
+
+\hypertarget{the-relationship-between-transmitted-and-proprietary-knowledge}{%
+\subsection{The relationship between transmitted and proprietary knowledge}\label{the-relationship-between-transmitted-and-proprietary-knowledge}}
+
+Under the \emph{cultural transmission model}, there is one type of social transmission: a larger pool of naive individuals observes a smaller pool of skilled individuals, perhaps in exchange for deference, thus acquiring their skills. Under the \emph{proprietary knowledge model}, in contrast, there are two types of ``transmission'': First, there are the services (products) that a few experts provide to a large pool of customers in exchange for some kind of payment, e.g., doctors' diagnoses and treatments to patients. This does not result in much, if any increase in specialised knowledge by customers (e.g., patients do not gradually become doctors). Second, experts expend considerable effort training a small pool of future experts (again, perhaps in exchange for some kind of much larger payment or inclusive fitness benefit). Indeed, consistent with the \emph{cultural transmission model}, experts were also teachers in 21\% of our text records, and this was closely related to assistance with common problems (figures 3 and 6). Of these observations, however, 11\% involved purchased knowledge, and 37\% appeared to involve teaching among kin. These constraints on social learning are amenable to a variety of interpretations, but in any case they are consistent with the \emph{proprietary knowledge model} proposal that know-how is a valuable resource, and might not be unconditionally shared. Questions about the roles of payment and nepotism in parting with valuable know-how can be explored in future research, but these findings do suggest that in practice, a spectrum of expertise lies between the \emph{cultural transmission model} and \emph{proprietary knowledge model}.
+
+Although the \emph{proprietary knowledge model} does not rule out transmission, a possible concern about its constraints on transmission is knowledge loss, undermining the scope for cumulative culture. Task domains supported with the \emph{proprietary knowledge model} are not commonly encountered, which by definition means that they are sampled rarely and provide fewer opportunities to learn (Strimling, Enquist, \& Eriksson, 2009). For example, Reyes-García et al. (2013) found that medicinal knowledge was susceptible to knowledge loss among Tsimane forager-horticulturalists over time, whereas motor skill-related domains such as boat making and construction tended to either remain consistent or increase over time.
+
+However, there are reasons to doubt that this concern is general to all types of skill domains. While much focus in cultural evolutionary theory is on behavioural copying, it is worth making explicit \emph{how} knowledge in a particular domain is transmitted. One key difference between conceptual and motor skill-related domains is the degree to which information is public vs.~private. Many motor skill-related domains, such as technological tasks, are achieved through specific, well-defined action sequences that can be observed and copied with high fidelity, even when underlying know-how is causally opaque (Flynn \& Smith, 2012). In contrast, conceptual knowledge comprises mental representations, some of which are more easily and reliably constructed than others (Boyer, 1998; Sperber, 1996). Learning tools, such as ostensive communication, intuitive analogies, and mnemonic devices, are available means for communicating conceptual knowledge, but these rely on reconstructive processes rather than high fidelity copying (Acerbi \& Mesoudi, 2015; Morin, 2016).
+
+Our study suggests that among experts, a tendency to broadly vs.~conditionally share knowledge depends strongly on the type of knowledge/skill domain, i.e., common problems that are solved by acquiring motor skills, vs.~rare and serious problems that are solved by acquiring conceptual knowledge. Future research can investigate how high market value of services might be associated with proprietary knowledge that is reluctantly shared or exchanged for a benefit (but see Lewis, 2015). A relevant factor for choosing whether or not to share knowledge might also be its scope for monopolising valuable services. An alternative hypothesis about knowledge loss, consistent with our account here, might be that some socioecological changes (e.g., market integration, developing clinics and infrastructure) introduce novel or expanded markets of knowledgeable specialists, on whom individuals can rely for efficient and efficacious solutions in a given domain (Salali et al., 2020).
+
+\hypertarget{the-distribution-of-cognitive-labour}{%
+\subsection{The distribution of cognitive labour}\label{the-distribution-of-cognitive-labour}}
+
+A central feature of the \emph{collaborative cognition model}, which bridged the \emph{cultural transmission model} and \emph{proprietary knowledge model}, is a distribution of cognitive labour: Multiple experts have elaborate but incomplete knowledge about their own domains of expertise, and rely on others to share knowledge about similarly partial expertise in complementary areas (Christophe Heintz, 2004; Keil, 2003). An economic exchange of ideas, on this view, enables cumulative cultural knowledge among highly interdependent specialists, permitting mutually beneficial increases in group-level knowledge. This might suggest that for specialists in conceptual domains, the market value of know-how is based on its rarity. Specialists can therefore use their comparative advantage to beneficially trade their (otherwise proprietary) innovations for other innovations outside of their areas of expertise (Tooby \& Cosmides, 1996).
+
+On the other hand, the market dynamic described here at least partially resembles existing perspectives on group size and cultural innovations, where a larger number of specialists exchange know-how with each other and improve their overall scope for innovation (Henrich et al., 2016; cf. Vaesen, Collard, Cosgrove, \& Roebroeks, 2016). Some empirical evidence has supported a relationship between group size and cultural innovations (Derex, Beugin, Godelle, \& Raymond, 2013; Kline \& Boyd, 2010), but these might be general to non-cumulative cultural copying, so long as the task at hand is sufficiently easy to copy (e.g., Ashton, Thornton, \& Ridley, 2019).
+
+Future research should therefore be vigilant about the different dynamics of cumulative culture in motor domains, which are relatively easy to copy with high fidelity, vs.~conceptual domains, which are not. In conceptual domains, cumulative culture might resemble the evolution of scientific concepts, i.e., old ideas used to generate new ones, with lower demands on transmission fidelity and higher demands on sufficiently building up their underlying intuitions (Carey, 2011; Christophe Heintz, 2013; Wimsatt \& Griesemer, 2007). Culture is complex, and when explaining its accumulation it is likely that one size does not fit all.
+
+It is also worth noting that the \emph{collaborative cognition model} does not necessarily represent ``pure collaboration'' among experts. Instead, it is compatible with the coexistence of collaboration and competition, both of which are compatible with the \emph{proprietary knowledge model} and \emph{cultural transmission model}. (The \emph{cultural transmission model} even clustered with competition among experts in figure \ref{fig:minspantree}.) Indeed, a more restrictive version of the \emph{collaborative cognition model} might have attenuated its emphasis on collaborative expertise, e.g., by including argumentation to gain influence in discourse (Mercier \& Heintz, 2014; Mercier \& Sperber, 2017), or by emphasising the role of prestige as an incentive for competition among specialists. In small-scale societies, prestige and general competence might be linked to transmitted knowledge and some mix of collaboration and competition: For example, traits that are frequently associated with elected leadership -- such as intelligence, high quality decision-making, prosociality, and mentorship (Garfield \& Hagen, 2020; Garfield, Hubbard, \& Hagen, 2019) -- reflect key aspects of the \emph{cultural transmission model}, \emph{proprietary knowledge model}, and \emph{collaborative cognition model}. Conversely, more specialised competences often emerge as societies and markets scale up in complexity (Cockburn, Crabtree, Kobti, Kohler, \& Bocinsky, 2013; Johnson, 1982). This increased complexity can, for some historical or ecological reason, also lay groundwork for a mix of collaboration and competition among prestigious groups of specialists, e.g., as seen in the shift from general medical practitioners toward widespread medical specialisation in nineteenth-century Paris (Weisz, 2003).
+
+Open questions therefore remain about how competition among experts with proprietary knowledge is balanced against collaboration among experts, especially when they have complementary areas of knowledge. Do individual interests overlap as a consequence of mutually beneficial epistemic partnerships? What benefits calibrate otherwise conflicting interests, e.g., among apprentices and their acolytes, or possibly among leaders and followers more generally? These questions can be investigated in future research.
+
+\hypertarget{limitations-and-caveats}{%
+\subsection{Limitations and caveats}\label{limitations-and-caveats}}
+
+Our source ethnographies varied in their theoretical commitments and aims. Some were broadly descriptive, but most focused on specific subjects other than expertise, and few shared our theoretical questions. Our search strategy also relied heavily on eHRAF OCM codes. Our sample is therefore not random, but is biased toward the subjects drawing the attention of ethnographers in our dataset, and the paragraph coding schemes used by HRAF staff. This suggests that our sample and its analyses are representative of ethnographic writings about expertise, rather than direct observations of expertise.
+
+Relatedly, an absence of evidence in this study should not be interpreted as evidence of absence. Ethnographers often emphasise the immediately relevant aspects of expertise, such as applications of knowledge, learning, social roles as experts, and consequences of being highly knowledgeable. This might account for the high levels of support among the \emph{collaborative cognition model}, \emph{proprietary knowledge model}, and \emph{cultural transmission model} compared to the \emph{honest signaling model} and \emph{mate provisioning model}, especially if mating, parenting, and resource flows are less observable for, or deemed irrelevant by, the ethnographers. A similar caveat should be applied to the large number of religious practitioners in our results (19\% of text records); ethnoscientific concepts might be mistakenly seen as supernatural, when subject matter is abstract or involves invisible entities (Gottlieb, 2004).
+
+The abstract nature of conceptual knowledge also complicated matters. It is difficult to measure and characterise the distribution of knowledge in a population. Compared to direct empirical observations, which themselves face formidable challenges (Kronenfeld, 2011), ethnographic studies are especially imprecise. Drawing inferences from ethnographic texts, especially the relatively short ones in our study, involves a further and inevitable lack of precision. Different variables in our coding scheme have different levels of overlap with each other, they might vary in their inclusiveness and specificity, and they are coded based on multiple levels of interpretation. We attempted to minimise these limitations by using two independent coders and reconciling coding differences afterward. Nevertheless, our data were filtered through judgments made not only by an ethnographer (Sperber, 1985), but also by our own interpretations of how the text records related to our coding scheme.
+
+\hypertarget{conclusion}{%
+\subsection{Conclusion}\label{conclusion}}
+
+In this study, we investigated the extent to which five mutually compatible evolutionary theories of knowledge and skill acquisition could account for ethnoscientific expertise, using 547 ethnographic text records from 55 geographically diverse societies. We found high levels of support for the collaborative cognition model, the \emph{proprietary knowledge model}, and the \emph{cultural transmission model}, and low levels of support for the \emph{honest signalling model} and the \emph{mate provisioning model}. Our exploratory analyses revealed that the \emph{proprietary knowledge model} was associated with medicinal knowledge, which was largely conceptual and involved solving rare and serious problems for clients. Conversely, the \emph{cultural transmission model} was associated with motor skill-related knowledge, which involved solving common, everyday problems, such as subsistence and construction. Support for each of these theoretical models was often linked to support for the \emph{collaborative cognition model}, which was broadly supported across knowledge domains. While many evolutionary theories imply competition among experts, our results suggest that collaboration among experts, who share know-how and/or services, is also important.
+
+Taken together, our results suggest that, rather than applying a single theoretical framework across multiple cultural domains, cultural evolutionary theories about ethnoscientific expertise should explicitly focus on the private and conceptual vs.~public and observable nature of knowledge and skill domains, and their applications to common vs.~rare problems.
+
+\hypertarget{acknowledgements}{%
+\section{Acknowledgements}\label{acknowledgements}}
+
+We thank members of the Evolution of Science and Religion as Meaning-Making Systems project seminar and the Hagen Bioanthropology Lab for helpful feedback during the development of this study. We also thank Anne Pisor, Rebecca Sear, and two anonymous reviewers for many helpful comments that improved this manuscript.
+
+\hypertarget{author-contributions}{%
+\section{Author Contributions}\label{author-contributions}}
+
+ADL and EHH designed the study. ADL collected the data. ADL and CH coded the data. ADL and EHH analysed the data. ADL wrote the first draft of the paper. ADL and EHH wrote the final draft of the paper. All authors read and approved the final draft of the paper.
+
+\hypertarget{financial-support}{%
+\section{Financial Support}\label{financial-support}}
+
+We acknowledge funding from the Issachar Fund and the Templeton Religion Trust.
+
+\hypertarget{conflicts-of-interest}{%
+\section{Conflicts of Interest}\label{conflicts-of-interest}}
+
+The authors declare none.
+
+\hypertarget{research-transparency-and-reproducibility}{%
+\section{Research Transparency and Reproducibility}\label{research-transparency-and-reproducibility}}
+
+All data and code are available at: \url{https://github.com/conceptualExpertsHRAF}.
+
+\hypertarget{references}{%
+\section*{References}\label{references}}
+\addcontentsline{toc}{section}{References}
+
+\hypertarget{refs}{}
+\begin{CSLReferences}{1}{0}
+\leavevmode\hypertarget{ref-acerbiIfWeAre2015}{}%
+Acerbi, A., \& Mesoudi, A. (2015). If we are all cultural {Darwinians} what's the fuss about? {Clarifying} recent disagreements in the field of cultural evolution. \emph{Biology \& Philosophy}, \emph{30}(4), 481--503. doi:\href{https://doi.org/10.1007/s10539-015-9490-2}{10.1007/s10539-015-9490-2}
+
+\leavevmode\hypertarget{ref-albuquerqueEvolutionaryEthnobiology2015}{}%
+Albuquerque, U. P., Medeiros, P. M. D., \& Casas, A. (Eds.). (2015). \emph{Evolutionary {Ethnobiology}}. {Springer International Publishing}. doi:\href{https://doi.org/10.1007/978-3-319-19917-7}{10.1007/978-3-319-19917-7}
+
+\leavevmode\hypertarget{ref-algerPaternalProvisioningResults2020}{}%
+Alger, I., Hooper, P. L., Cox, D., Stieglitz, J., \& Kaplan, H. S. (2020). Paternal provisioning results from ecological change. \emph{Proceedings of the National Academy of Sciences}, \emph{117}(20), 10746--10754. doi:\href{https://doi.org/10.1073/pnas.1917166117}{10.1073/pnas.1917166117}
+
+\leavevmode\hypertarget{ref-ashtonLargerGroupSizes2019}{}%
+Ashton, B. J., Thornton, A., \& Ridley, A. R. (2019). Larger group sizes facilitate the emergence and spread of innovations in a group-living bird. \emph{Animal Behaviour}, \emph{158}, 1--7. doi:\href{https://doi.org/10.1016/j.anbehav.2019.10.004}{10.1016/j.anbehav.2019.10.004}
+
+\leavevmode\hypertarget{ref-atranCognitiveFoundationsNatural1993}{}%
+Atran, S. (1993). \emph{Cognitive {Foundations} of {Natural History}: {Towards} an {Anthropology} of {Science}}. {Cambridge University Press}.
+
+\leavevmode\hypertarget{ref-atranNativeMindCultural2008}{}%
+Atran, S., \& Medin, D. L. (2008). \emph{The native mind and the cultural construction of nature}. Life and mind. {Cambridge, Mass}: {MIT Press}.
+
+\leavevmode\hypertarget{ref-barkowDarwinSexStatus1989}{}%
+Barkow, J. H. (1989). \emph{Darwin, sex, and status: {Biological} approaches to mind and culture.} {University of Toronto Press}.
+
+\leavevmode\hypertarget{ref-barkowAdaptedMindEvolutionary1992}{}%
+Barkow, J. H., Cosmides, L., \& Tooby, J. (1992). \emph{The adapted mind: {Evolutionary} psychology and the generation of culture}. {Oxford University Press, USA}.
+
+\leavevmode\hypertarget{ref-berlinMedicalEthnobiologyHighland2015}{}%
+Berlin, E., \& Berlin, B. (2015). \emph{Medical {Ethnobiology} of the {Highland Maya} of {Chiapas}, {Mexico}}.
+
+\leavevmode\hypertarget{ref-bouhlelSharingNotErring2018}{}%
+Bouhlel, I., Wu, C. M., Ilanaki, N., \& Goldstone, R. L. (2018). Sharing is not erring: {Pseudo}-reciprocity in collective search. \emph{bioRxiv}, 258715. doi:\href{https://doi.org/10.1101/258715}{10.1101/258715}
+
+\leavevmode\hypertarget{ref-boydCultureEvolutionaryProcess1985}{}%
+Boyd, Robert, \& Richerson, P. J. (1985). \emph{Culture and the evolutionary process} (Paperback ed.). {Chicago (u.a.)}: {University of Chicago Press}.
+
+\leavevmode\hypertarget{ref-boydWhyDoesCulture1995}{}%
+Boyd, Robert, \& Richerson, P. J. (1995). Why does culture increase human adaptability? \emph{Ethology and Sociobiology}, \emph{16}(2), 125--143. doi:\href{https://doi.org/10.1016/0162-3095(94)00073-G}{10.1016/0162-3095(94)00073-G}
+
+\leavevmode\hypertarget{ref-boydWhyCultureCommon1996}{}%
+Boyd, Robert, \& Richerson, P. J. (1996). Why culture is common, but cultural evolution is rare. \emph{Evolution of social behaviour patterns in primates and man.}, Proceedings of {The British Academy}, {Vol}. 88. (pp. 77--93). {New York, NY, US}: {Oxford University Press}.
+
+\leavevmode\hypertarget{ref-boydCulturalNicheWhy2011}{}%
+Boyd, R., Richerson, P. J., \& Henrich, J. (2011). The cultural niche: {Why} social learning is essential for human adaptation. \emph{Proceedings of the National Academy of Sciences}, \emph{108}(Supplement\_2), 10918--10925. doi:\href{https://doi.org/10.1073/pnas.1100290108}{10.1073/pnas.1100290108}
+
+\leavevmode\hypertarget{ref-boyerCognitiveTracksCultural1998}{}%
+Boyer, P. (1998). Cognitive {Tracks} of {Cultural Inheritance}: {How Evolved Intuitive Ontology Governs Cultural Transmission}. \emph{American Anthropologist}, \emph{100}(4), 876--889. doi:\href{https://doi.org/10.1525/aa.1998.100.4.876}{10.1525/aa.1998.100.4.876}
+
+\leavevmode\hypertarget{ref-bussSexDifferencesHuman1989}{}%
+Buss, David M. (1989). Sex differences in human mate preferences: {Evolutionary} hypotheses tested in 37 cultures. \emph{Behavioral and Brain Sciences}, \emph{12}(1), 1--14. doi:\href{https://doi.org/10.1017/S0140525X00023992}{10.1017/S0140525X00023992}
+
+\leavevmode\hypertarget{ref-bussConsequencesPartnerChoice1992}{}%
+Buss, David M. (1992). Consequences for {Partner Choice} and {Intrasexual Competition}. \emph{The adapted mind: Evolutionary psychology and the generation of culture}, 249.
+
+\leavevmode\hypertarget{ref-bussPsychologicalSexDifferences1995}{}%
+Buss, David M. (1995). Psychological sex differences: {Origins} through sexual selection.
+
+\leavevmode\hypertarget{ref-careyPrecisOriginConcepts2011}{}%
+Carey, S. (2011). Précis of the origin of concepts. \emph{Behavioral and Brain Sciences}, \emph{34}(3), 113.
+
+\leavevmode\hypertarget{ref-cockburn2013simulating}{}%
+Cockburn, D., Crabtree, S. A., Kobti, Z., Kohler, T. A., \& Bocinsky, R. K. (2013). Simulating social and economic specialization in small-scale agricultural societies. \emph{Journal of Artificial Societies and Social Simulation}, \emph{16}(4), 4.
+
+\leavevmode\hypertarget{ref-cosmidesAreHumansGood1996}{}%
+Cosmides, L., \& Tooby, J. (1996). Are humans good intuitive statisticians after all? {Rethinking} some conclusions from the literature on judgment under uncertainty. \emph{Cognition}, \emph{58}(1), 1--73. doi:\href{https://doi.org/10.1016/0010-0277(95)00664-8}{10.1016/0010-0277(95)00664-8}
+
+\leavevmode\hypertarget{ref-derexExperimentalEvidenceInfluence2013}{}%
+Derex, M., Beugin, M.-P., Godelle, B., \& Raymond, M. (2013). Experimental evidence for the influence of group size on cultural complexity. \emph{Nature}, \emph{503}(7476), 389--391. doi:\href{https://doi.org/10.1038/nature12774}{10.1038/nature12774}
+
+\leavevmode\hypertarget{ref-dijkstraNoteTwoProblems1959}{}%
+Dijkstra, E. W. (1959). A note on two problems in connexion with graphs. \emph{Numerische Mathematik}, \emph{1}(1), 269--271. doi:\href{https://doi.org/10.1007/BF01386390}{10.1007/BF01386390}
+
+\leavevmode\hypertarget{ref-dukasAnimalExpertiseMechanisms2019}{}%
+Dukas, R. (2019). Animal expertise: Mechanisms, ecology and evolution. \emph{Animal behaviour}, \emph{147}, 199--210.
+
+\leavevmode\hypertarget{ref-ellenCategoricalImpulseEssays2006}{}%
+Ellen, R. F. (2006). \emph{The categorical impulse: Essays in the anthropology of classifying behaviour}. {Berghahn books}.
+
+\leavevmode\hypertarget{ref-ericssonExpertPerformanceIts1994}{}%
+Ericsson, K. A., \& Charness, N. (1994). Expert performance: {Its} structure and acquisition. \emph{American psychologist}, \emph{49}(8), 725.
+
+\leavevmode\hypertarget{ref-flynnInvestigatingMechanismsCultural2012}{}%
+Flynn, E., \& Smith, K. (2012). Investigating the {Mechanisms} of {Cultural Acquisition}: {How Pervasive} is {Overimitation} in {Adults}? \emph{Social Psychology}, \emph{43}(4), 185--195. doi:\href{https://doi.org/10.1027/1864-9335/a000119}{10.1027/1864-9335/a000119}
+
+\leavevmode\hypertarget{ref-friedmanGlmnetLassoElasticNet2021}{}%
+Friedman, J., Hastie, T., Tibshirani, R., Narasimhan, B., Tay, K., Simon, N., \& Qian, J. (2021, February). Glmnet: {Lasso} and {Elastic}-{Net Regularized Generalized Linear Models}.
+
+\leavevmode\hypertarget{ref-garfieldInvestigatingEvolutionaryModels2020}{}%
+Garfield, Z. H., \& Hagen, E. H. (2020). Investigating evolutionary models of leadership among recently settled {Ethiopian} hunter-gatherers. \emph{The Leadership Quarterly}, Special issue on {Evolution} and {Biology} of {Leadership}, \emph{31}(2), 101290. doi:\href{https://doi.org/10.1016/j.leaqua.2019.03.005}{10.1016/j.leaqua.2019.03.005}
+
+\leavevmode\hypertarget{ref-garfieldEvolutionaryModelsLeadership2019b}{}%
+Garfield, Z. H., Hubbard, R. L., \& Hagen, E. H. (2019). Evolutionary models of leadership: {Tests} and synthesis. \emph{Human Nature}, \emph{30}(1), 23--58. doi:\href{https://doi.org/10.1007/s12110-019-09338-4}{10.1007/s12110-019-09338-4}
+
+\leavevmode\hypertarget{ref-garfieldUniversalVariableLeadership2020}{}%
+Garfield, Z. H., Syme, K. L., \& Hagen, E. H. (2020). Universal and variable leadership dimensions across human societies. \emph{Evolution and Human Behavior}, Beyond {Weird}, \emph{41}(5), 397--414. doi:\href{https://doi.org/10.1016/j.evolhumbehav.2020.07.012}{10.1016/j.evolhumbehav.2020.07.012}
+
+\leavevmode\hypertarget{ref-gavriletsHumanOriginsTransition2012}{}%
+Gavrilets, S. (2012). Human origins and the transition from promiscuity to pair-bonding. \emph{Proceedings of the National Academy of Sciences of the United States of America}, \emph{109}(25), 9923--9928. doi:\href{https://doi.org/10.1073/pnas.1200717109}{10.1073/pnas.1200717109}
+
+\leavevmode\hypertarget{ref-geherMatingIntelligenceIntegrative2008}{}%
+Geher, G., Camargo, M., \& O'Rourke, S. (2008). Mating intelligence: {An} integrative model and future research directions. \emph{Mating intelligence: sex, relationships and the mind's reproductive system}, 395--424.
+
+\leavevmode\hypertarget{ref-gigerenzerHeuristics2011}{}%
+Gigerenzer, G., Hertwig, R., \& Pachur, T. (2011). \emph{Heuristics}. {Oxford University Press}. doi:\href{https://doi.org/10.1093/acprof:oso/9780199744282.001.0001}{10.1093/acprof:oso/9780199744282.001.0001}
+
+\leavevmode\hypertarget{ref-gigerenzerCognitionIntuitiveStatistics2015}{}%
+Gigerenzer, G., \& Murray, D. J. (2015). \emph{Cognition as {Intuitive Statistics}}. {Psychology Press}.
+
+\leavevmode\hypertarget{ref-gigerenzerSimpleHeuristicsThat2001}{}%
+Gigerenzer, G., \& Todd, P. M. (2001). \emph{Simple heuristics that make us smart}. Evolution and cognition (1. issued as an Oxford Univ. Press paperback.). {Oxford}: {Oxford Univ. Press}.
+
+\leavevmode\hypertarget{ref-gopnikChildhoodSolutionExplore2020}{}%
+Gopnik, A. (2020). Childhood as a solution to explore{}exploit tensions. \emph{Philosophical Transactions of the Royal Society B: Biological Sciences}, \emph{375}(1803), 20190502. doi:\href{https://doi.org/10.1098/rstb.2019.0502}{10.1098/rstb.2019.0502}
+
+\leavevmode\hypertarget{ref-gopnikScientistCribWhat2000}{}%
+Gopnik, A., Meltzoff, A. N., \& Kuhl, P. K. (2000). \emph{The {Scientist} in the {Crib}: {What Early Learning Tells Us About} the {Mind}} (Reprint edition.). {New York}: {William Morrow Paperbacks}.
+
+\leavevmode\hypertarget{ref-gottliebAfterlifeWhereWe2004}{}%
+Gottlieb, A. (2004). \emph{The {Afterlife Is Where We Come From}: {The Culture} of {Infancy} in {West Africa}} (1st edition.). {Chicago}: {University of Chicago Press}.
+
+\leavevmode\hypertarget{ref-grafenBiologicalSignalsHandicaps1990}{}%
+Grafen, A. (1990). Biological signals as handicaps. \emph{Journal of theoretical biology}, \emph{144}(4), 517--546.
+
+\leavevmode\hypertarget{ref-hagenLeadershipPrestigeMothering2019}{}%
+Hagen, E. H., \& Garfield, Z. H. (2019). \emph{Leadership and prestige, mothering, sexual selection, and encephalization: {The} computational services model} (Preprint). {Open Science Framework}. doi:\href{https://doi.org/10.31219/osf.io/9bcdk}{10.31219/osf.io/9bcdk}
+
+\leavevmode\hypertarget{ref-hahslerSeriationInfrastructureOrdering2020}{}%
+Hahsler, M., Buchta, C., Hornik, K., Murtagh, F., Brusco, M., Stahl, S., \& Koehn, H.-F. (2020, October). Seriation: {Infrastructure} for {Ordering Objects Using Seriation}.
+
+\leavevmode\hypertarget{ref-hammersteinBiologicalTradeMarkets2016a}{}%
+Hammerstein, P., \& Noë, R. (2016). Biological trade and markets. \emph{Philosophical Transactions of the Royal Society B: Biological Sciences}, \emph{371}(1687), 20150101. doi:\href{https://doi.org/10.1098/rstb.2015.0101}{10.1098/rstb.2015.0101}
+
+\leavevmode\hypertarget{ref-hawkesShowingHandicapSignaling2002}{}%
+Hawkes, K., \& Bliege Bird, R. (2002). Showing off, handicap signaling, and the evolution of men's work. \emph{Evolutionary Anthropology: Issues, News, and Reviews: Issues, News, and Reviews}, \emph{11}(2), 58--67.
+
+\leavevmode\hypertarget{ref-heintzIntroductionWhyThere2004}{}%
+Heintz, Christophe. (2004). Introduction: {Why} there should be a cognitive anthropology of science. \emph{Journal of Cognition and Culture}, \emph{4}(3-4), 391--408.
+
+\leavevmode\hypertarget{ref-heintzScientificCognitionCultural2007}{}%
+Heintz, C. (2007). Scientific cognition and cultural evolution: {Theoretical} tools for integrating social and cognitive studies of science. \emph{Unpublished doctoral dissertation). Ecole des Hautes Etudes en Sciences Sociales, Paris}.
+
+\leavevmode\hypertarget{ref-heintzScaffoldingCoreCognition2013}{}%
+Heintz, Christophe. (2013). Scaffolding on core cognition. \emph{Developing scaffolds in evolution, culture and cognition}, 209--228.
+
+\leavevmode\hypertarget{ref-henrichSecretOurSuccess2016}{}%
+Henrich, J. (2016). \emph{The secret of our success: How culture is driving human evolution, domesticating our species, and making us smarter}. {Princeton}: {Princeton University Press}.
+
+\leavevmode\hypertarget{ref-henrichUnderstandingCumulativeCultural2016}{}%
+Henrich, J., Boyd, R., Derex, M., Kline, M. A., Mesoudi, A., Muthukrishna, M., Powell, A. T., et al. (2016). Understanding cumulative cultural evolution. \emph{Proceedings of the National Academy of Sciences}, \emph{113}(44), E6724--E6725. doi:\href{https://doi.org/10.1073/pnas.1610005113}{10.1073/pnas.1610005113}
+
+\leavevmode\hypertarget{ref-henrich2001role}{}%
+Henrich, J., Boyd, R., Young, P., McCabe, K., Alberts, W., Ockenfelds, A., \& Gigerenzer, G. (2001). What is the role of culture in bounded rationality. \emph{Bounded rationality: The adaptive toolbox}, 343--359.
+
+\leavevmode\hypertarget{ref-henrichEvolutionPrestigeFreely2001}{}%
+Henrich, J., \& Gil-White, F. J. (2001). The evolution of prestige: Freely conferred deference as a mechanism for enhancing the benefits of cultural transmission. \emph{Evolution and Human Behavior}, \emph{22}(3), 165--196. doi:\href{https://doi.org/10.1016/S1090-5138(00)00071-4}{10.1016/S1090-5138(00)00071-4}
+
+\leavevmode\hypertarget{ref-henrichEvolutionCulturalEvolution2003}{}%
+Henrich, J., \& McElreath, R. (2003). The evolution of cultural evolution. \emph{Evolutionary Anthropology: Issues, News, and Reviews}, \emph{12}(3), 123--135. doi:\href{https://doi.org/10.1002/evan.10110}{10.1002/evan.10110}
+
+\leavevmode\hypertarget{ref-hillHuntergatherersNewWorld1989}{}%
+Hill, K., \& Hurtado, A. M. (1989). Hunter-gatherers of the {New World}. \emph{American Scientist}, \emph{77}(5), 436--443.
+
+\leavevmode\hypertarget{ref-hutchinsCognitionWild2000}{}%
+Hutchins, E. (2000). \emph{Cognition in the wild} (Nachdr.). {Cambridge, Mass}: {MIT Press}.
+
+\leavevmode\hypertarget{ref-jimenezPrestigebiasedSocialLearning2019}{}%
+Jiménez, Á. V., \& Mesoudi, A. (2019). Prestige-biased social learning: Current evidence and outstanding questions. \emph{Palgrave Communications}, \emph{5}(1), 1--12. doi:\href{https://doi.org/10.1057/s41599-019-0228-7}{10.1057/s41599-019-0228-7}
+
+\leavevmode\hypertarget{ref-johnson1982organizational}{}%
+Johnson, G. A. (1982). Organizational structure and scalar stress. \emph{Theory and explanation in archaeology}, 389--421.
+
+\leavevmode\hypertarget{ref-kaplanTheoryHumanLife2000}{}%
+Kaplan, H., Hill, K., Lancaster, J., \& Hurtado, A. M. (2000). A theory of human life history evolution: {Diet}, intelligence, and longevity. \emph{Evolutionary Anthropology: Issues, News, and Reviews: Issues, News, and Reviews}, \emph{9}(4), 156--185.
+
+\leavevmode\hypertarget{ref-kaplanEvolutionaryEcologicalRoots2009}{}%
+Kaplan, H. S., Hooper, P. L., \& Gurven, M. (2009). The evolutionary and ecological roots of human social organization. \emph{Philosophical Transactions of the Royal Society B: Biological Sciences}, \emph{364}(1533), 3289--3299. doi:\href{https://doi.org/10.1098/rstb.2009.0115}{10.1098/rstb.2009.0115}
+
+\leavevmode\hypertarget{ref-keilFolkscienceCoarseInterpretations2003}{}%
+Keil, F. C. (2003). Folkscience: Coarse interpretations of a complex reality. \emph{Trends in Cognitive Sciences}, \emph{7}(8), 368--373. doi:\href{https://doi.org/10.1016/S1364-6613(03)00158-X}{10.1016/S1364-6613(03)00158-X}
+
+\leavevmode\hypertarget{ref-klinePopulationSizePredicts2010}{}%
+Kline, M. A., \& Boyd, R. (2010). Population size predicts technological complexity in {Oceania}. \emph{Proceedings of the Royal Society B: Biological Sciences}, \emph{277}(1693), 2559--2564. doi:\href{https://doi.org/10.1098/rspb.2010.0452}{10.1098/rspb.2010.0452}
+
+\leavevmode\hypertarget{ref-kronenfeldCompanionCognitiveAnthropology2011}{}%
+Kronenfeld, D. B. (Ed.). (2011). \emph{A companion to cognitive anthropology}. Blackwell companions to anthropology. {Chichester, West Sussex ; Malden, MA}: {Wiley-Blackwell}.
+
+\leavevmode\hypertarget{ref-kuhnChildrenAdultsIntuitive1989}{}%
+Kuhn, D. (1989). Children and adults as intuitive scientists. \emph{Psychological Review}, \emph{96}(4), 674--689. doi:\href{https://doi.org/10.1037/0033-295X.96.4.674}{10.1037/0033-295X.96.4.674}
+
+\leavevmode\hypertarget{ref-lakoffWomenFireDangerous1987}{}%
+Lakoff, G. (1987). \emph{Women, {Fire}, and {Dangerous Things}}. {University of Chicago Press}.
+
+\leavevmode\hypertarget{ref-legareCumulativeCulturalLearning2017}{}%
+Legare, C. H. (2017). Cumulative cultural learning: {Development} and diversity. \emph{Proceedings of the National Academy of Sciences}, \emph{114}(30), 7877--7883. doi:\href{https://doi.org/10.1073/pnas.1620743114}{10.1073/pnas.1620743114}
+
+\leavevmode\hypertarget{ref-lewisWhereGoodsAre2015}{}%
+Lewis, J. (2015). Where goods are free but knowledge costs. \emph{Hunter Gatherer Research}, \emph{1}(1), 1--28.
+
+\leavevmode\hypertarget{ref-manerDominancePrestigeDual2016}{}%
+Maner, J. K., \& Case, C. R. (2016). Dominance and prestige: {Dual} strategies for navigating social hierarchies. \emph{Advances in experimental social psychology} (Vol. 54, pp. 129--180). {Elsevier}.
+
+\leavevmode\hypertarget{ref-mercierScientistsArgumentativeReasoning2014}{}%
+Mercier, H., \& Heintz, C. (2014). Scientists' argumentative reasoning. \emph{Topoi}, \emph{33}(2), 513--524.
+
+\leavevmode\hypertarget{ref-mercierEnigmaReason2017}{}%
+Mercier, H., \& Sperber, D. (2017). \emph{The enigma of reason}. {Cambridge, Massachusetts}: {Harvard University Press}.
+
+\leavevmode\hypertarget{ref-millerMatingMindHow2011}{}%
+Miller, G. (2011). \emph{The mating mind: {How} sexual choice shaped the evolution of human nature}. {Anchor}.
+
+\leavevmode\hypertarget{ref-millerSexualSelectionCultural1999}{}%
+Miller, G. F. (1999). Sexual selection for cultural displays. \emph{The evolution of culture}, 71--91.
+
+\leavevmode\hypertarget{ref-morinHowTraditionsLive2015}{}%
+Morin, O. (2015). \emph{How {Traditions Live} and {Die}}. {Oxford University Press}.
+
+\leavevmode\hypertarget{ref-morinReasonsBeFussy2016}{}%
+Morin, O. (2016). Reasons to be fussy about cultural evolution. \emph{Biology \& Philosophy}, \emph{31}, 447--458. doi:\href{https://doi.org/10.1007/s10539-016-9516-4}{10.1007/s10539-016-9516-4}
+
+\leavevmode\hypertarget{ref-murdockOutlineCulturalMaterials2006}{}%
+Murdock, G. P., Ford, C., Hudson, A., Kennedy, R., Simmons, L., \& Whiting, J. (2006). \emph{Outline of {Cultural Materials}}. {New Haven}: {Human Relations Area Files}.
+
+\leavevmode\hypertarget{ref-muthukrishnaCulturalBrainHypothesis2018}{}%
+Muthukrishna, M., Doebeli, M., Chudek, M., \& Henrich, J. (2018). The {Cultural Brain Hypothesis}: {How} culture drives brain expansion, sociality, and life history. \emph{PLOS Computational Biology}, \emph{14}(11), e1006504. doi:\href{https://doi.org/10.1371/journal.pcbi.1006504}{10.1371/journal.pcbi.1006504}
+
+\leavevmode\hypertarget{ref-narollProposedHRAFProbability1967}{}%
+Naroll, R. (1967). The proposed {HRAF} probability sample. \emph{Behavior Science Notes}, \emph{2}(2), 70--80.
+
+\leavevmode\hypertarget{ref-nersessianCreatingScientificConcepts2010}{}%
+Nersessian, N. J. (2010). \emph{Creating scientific concepts}. {MIT press}.
+
+\leavevmode\hypertarget{ref-ortonyPsychologicalEssentialism1989}{}%
+Ortony, A., \& Medin, D. (1989). Psychological essentialism. \emph{Similarity and analogical reasoning}, 179--195.
+
+\leavevmode\hypertarget{ref-pennHandicapPrincipleHow2020}{}%
+Penn, D. J., \& Számadó, S. (2020). The {Handicap Principle}: How an erroneous hypothesis became a scientific principle. \emph{Biological Reviews}, \emph{95}(1), 267--290.
+
+\leavevmode\hypertarget{ref-pinkerCognitiveNicheCoevolution2010}{}%
+Pinker, S. (2010). The cognitive niche: {Coevolution} of intelligence, sociality, and language. \emph{Proceedings of the National Academy of Sciences}, \emph{107}(Supplement\_2), 8993--8999. doi:\href{https://doi.org/10.1073/pnas.0914630107}{10.1073/pnas.0914630107}
+
+\leavevmode\hypertarget{ref-plominNatureNurtureExpertise2014}{}%
+Plomin, R., Shakeshaft, N. G., McMillan, A., \& Trzaskowski, M. (2014). Nature, nurture, and expertise. \emph{Intelligence}, \emph{45}, 46--59.
+
+\leavevmode\hypertarget{ref-price2015service}{}%
+Price, M. E., \& Van Vugt, M. (2015). The service-for-prestige theory of leader{}follower relations: {A} review of the evolutionary psychology and anthropology literatures. \emph{Biological foundations of organizational behavior}, 397--477.
+
+\leavevmode\hypertarget{ref-primShortestConnectionNetworks1957}{}%
+Prim, R. C. (1957). Shortest connection networks and some generalizations. \emph{The Bell System Technical Journal}, \emph{36}(6), 1389--1401. doi:\href{https://doi.org/10.1002/j.1538-7305.1957.tb01515.x}{10.1002/j.1538-7305.1957.tb01515.x}
+
+\leavevmode\hypertarget{ref-readCulturalComplexityComplexity2019}{}%
+Read, D., \& Andersson, C. (2019). Cultural complexity and complexity evolution. \emph{Adaptive Behavior}, 1059712318822298. doi:\href{https://doi.org/10.1177/1059712318822298}{10.1177/1059712318822298}
+
+\leavevmode\hypertarget{ref-reyes-garciaCulturalTransmissionEthnobotanical2009}{}%
+Reyes-García, V., Broesch, J., Calvet-Mir, L., Fuentes-Peláez, N., McDade, T., Parsa, S., Tanner, S., et al. (2009). {Cultural transmission of ethnobotanical knowledge and skills: an empirical analysis from an Amerindian society}. \emph{Evolution and Human Behavior}, \emph{30}(4), 274--285. doi:\href{https://doi.org/10.1016/j.evolhumbehav.2009.02.001}{10.1016/j.evolhumbehav.2009.02.001}
+
+\leavevmode\hypertarget{ref-reyes-garciaEvidenceTraditionalKnowledge2013}{}%
+Reyes-García, V., Guèze, M., Luz, A. C., Paneque-Gálvez, J., Macía, M. J., Orta-Martínez, M., Pino, J., et al. (2013). Evidence of traditional knowledge loss among a contemporary indigenous society. \emph{Evolution and human behavior : official journal of the Human Behavior and Evolution Society}, \emph{34}(4), 249--257. doi:\href{https://doi.org/10.1016/j.evolhumbehav.2013.03.002}{10.1016/j.evolhumbehav.2013.03.002}
+
+\leavevmode\hypertarget{ref-richersonNotGenesAlone2005}{}%
+Richerson, P. J., \& Boyd, R. (2005). \emph{Not by genes alone}. {Chicago: University of Chicago Press}.
+
+\leavevmode\hypertarget{ref-rogersDoesBiologyConstrain1988}{}%
+Rogers, A. R. (1988). Does {Biology Constrain Culture}. \emph{American Anthropologist}, \emph{90}(4), 819--831. doi:\href{https://doi.org/10.1525/aa.1988.90.4.02a00030}{10.1525/aa.1988.90.4.02a00030}
+
+\leavevmode\hypertarget{ref-salaliGlobalWEIRDingTransitions2020}{}%
+Salali, G. D., Dyble, M., Chaudhary, N., Sikka, G., Derkx, I., Keestra, S. M., Smith, D., et al. (2020). Global {WEIRDing}: Transitions in wild plant knowledge and treatment preferences in {Congo} hunter{}gatherers. \emph{Evolutionary Human Sciences}, \emph{2}. doi:\href{https://doi.org/10.1017/ehs.2020.26}{10.1017/ehs.2020.26}
+
+\leavevmode\hypertarget{ref-schmittEvolutionaryPerspectiveMate2008}{}%
+Schmitt, D. P. (2008). An evolutionary perspective on mate choice and relationship initiation. \emph{Handbook of relationship initiation} (pp. 55--74). {New York, NY, US}: {Psychology Press}.
+
+\leavevmode\hypertarget{ref-slomanKnowledgeIllusionWhy2017a}{}%
+Sloman, S., \& Fernbach, P. (2017). \emph{The {Knowledge Illusion}: {Why We Never Think Alone}}. {New York}: {Riverhead Books}.
+
+\leavevmode\hypertarget{ref-smithTurtleHuntingTombstone2000}{}%
+Smith, E. A., \& Bird, R. L. B. (2000). Turtle hunting and tombstone opening: Public generosity as costly signaling. \emph{Evolution and Human Behavior}, \emph{21}(4), 245--261. doi:\href{https://doi.org/10.1016/S1090-5138(00)00031-3}{10.1016/S1090-5138(00)00031-3}
+
+\leavevmode\hypertarget{ref-spenceJobMarketSignaling1978}{}%
+Spence, M. (1978). Job market signaling. \emph{Uncertainty in economics} (pp. 281--306). {Elsevier}.
+
+\leavevmode\hypertarget{ref-sperberAnthropologicalKnowledge1985}{}%
+Sperber, D. (1985). \emph{On anthropological knowledge}. {Cambridge University Press}.
+
+\leavevmode\hypertarget{ref-sperberExplainingCultureNaturalistic1996}{}%
+Sperber, D. (1996). Explaining culture: {A} naturalistic approach. \emph{Cambridge, MA: Cambridge}.
+
+\leavevmode\hypertarget{ref-sperberCausalCognitionMultidisciplinary1995}{}%
+Sperber, D., Premack, D., \& Premack, A. J. (1995). \emph{Causal cognition: {A} multidisciplinary debate}. {Clarendon Press Oxford}.
+
+\leavevmode\hypertarget{ref-stewart-williamsApeThatThought2013}{}%
+Stewart-Williams, S., \& Thomas, A. G. (2013). The ape that thought it was a peacock: {Does} evolutionary psychology exaggerate human sex differences? \emph{Psychological Inquiry}, \emph{24}(3), 137--168.
+
+\leavevmode\hypertarget{ref-strimlingRepeatedLearningMakes2009}{}%
+Strimling, P., Enquist, M., \& Eriksson, K. (2009). Repeated learning makes cultural evolution unique. \emph{Proceedings of the National Academy of Sciences}, \emph{106}(33), 13870--13874. doi:\href{https://doi.org/10.1073/pnas.0903180106}{10.1073/pnas.0903180106}
+
+\leavevmode\hypertarget{ref-sugiyamaSocialRolesPrestige2003}{}%
+Sugiyama, L. S., \& Sugiyama, M. S. (2003). Social roles, prestige, and health risk. \emph{Human Nature}, \emph{14}(2), 165--190. doi:\href{https://doi.org/10.1007/s12110-003-1002-4}{10.1007/s12110-003-1002-4}
+
+\leavevmode\hypertarget{ref-szollosiPeopleIntuitiveScientists2020}{}%
+Szollosi, A., \& Newell, B. R. (2020). People {As Intuitive Scientists}: {Reconsidering Statistical Explanations} of {Decision Making}. \emph{Trends in Cognitive Sciences}, \emph{0}(0). doi:\href{https://doi.org/10.1016/j.tics.2020.09.005}{10.1016/j.tics.2020.09.005}
+
+\leavevmode\hypertarget{ref-tennieRatchetingRatchetEvolution2009}{}%
+Tennie, C., Call, J., \& Tomasello, M. (2009). Ratcheting up the ratchet: On the evolution of cumulative culture. \emph{Philosophical Transactions of the Royal Society B: Biological Sciences}, \emph{364}(1528), 2405--2415. doi:\href{https://doi.org/10.1098/rstb.2009.0052}{10.1098/rstb.2009.0052}
+
+\leavevmode\hypertarget{ref-tinbergenAimsMethodsEthology1963}{}%
+Tinbergen, N. (1963). On aims and methods of ethology. \emph{Zeitschrift für tierpsychologie}, \emph{20}(4), 410--433.
+
+\leavevmode\hypertarget{ref-toobyFriendshipBankerParadox1996}{}%
+Tooby, J., \& Cosmides, L. (1996). Friendship and the banker's paradox: {Other} pathways to the evolution of adaptations for altruism. \emph{Proceedings-{British Academy}} (Vol. 88, pp. 119--144). {OXFORD UNIVERSITY PRESS INC.}
+
+\leavevmode\hypertarget{ref-vaesen2016population}{}%
+Vaesen, K., Collard, M., Cosgrove, R., \& Roebroeks, W. (2016). Population size does not explain past changes in cultural complexity. \emph{Proceedings of the National Academy of Sciences}, \emph{113}(16), E2241--E2247.
+
+\leavevmode\hypertarget{ref-vanvugtDualModelLeadership2019}{}%
+Van Vugt, M., \& Smith, J. E. (2019). A {Dual Model} of {Leadership} and {Hierarchy}: {Evolutionary Synthesis}. \emph{Trends in Cognitive Sciences}, \emph{23}(11), 952--967. doi:\href{https://doi.org/10.1016/j.tics.2019.09.004}{10.1016/j.tics.2019.09.004}
+
+\leavevmode\hypertarget{ref-weisz2003emergence}{}%
+Weisz, G. (2003). The emergence of medical specialization in the nineteenth century. \emph{Bulletin of the History of Medicine}, 536--575.
+
+\leavevmode\hypertarget{ref-wimsattReproducingEntrenchmentsScaffold2007}{}%
+Wimsatt, W. C., \& Griesemer, J. R. (2007). Reproducing entrenchments to scaffold culture: {The} central role of development in cultural evolution. \emph{Integrating evolution and development: From theory to practice}, 227--323.
+
+\leavevmode\hypertarget{ref-winegardEvolutionExpertise2018}{}%
+Winegard, B., Winegard, B., \& Geary, D. C. (2018). The {Evolution} of {Expertise}. \emph{The Cambridge Handbook of Expertise and Expert Performance}, 40.
+
+\leavevmode\hypertarget{ref-zahaviMateSelectionSelection1975}{}%
+Zahavi, A. (1975). Mate selection{}a selection for a handicap. \emph{Journal of theoretical Biology}, \emph{53}(1), 205--214.
+
+\leavevmode\hypertarget{ref-zahnGraphTheoreticalMethodsDetecting1971}{}%
+Zahn, C. T. (1971). Graph-{Theoretical Methods} for {Detecting} and {Describing Gestalt Clusters}. \emph{IEEE Transactions on Computers}, \emph{C-20}(1), 68--86. doi:\href{https://doi.org/10.1109/T-C.1971.223083}{10.1109/T-C.1971.223083}
+
+\end{CSLReferences}
+
+\end{document}

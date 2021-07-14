@@ -279,3 +279,111 @@ scale_y_reordered <- function(..., sep = "___") {
   reg <- paste0(sep, ".+$")
   ggplot2::scale_y_discrete(labels=function(x) gsub(reg, "", x), ...)
 }
+
+
+hagenheat3 <- function (d, method = "seriate", seriation_method = NULL, independent = F, 
+                        hc_method = "ward.D", dist_method = "euclidean", scale. = "none", 
+                        viridis_option = "D", wrap_labels = T, rotate_labels = F, 
+                        ann_col = NULL) 
+{
+  if (inherits(d, "dist")) {
+    rwnms <- labels(d)
+    if (is.null(seriation_method)) 
+      seriation_method <- "Spectral"
+    o <- seriation::seriate(d, method = seriation_method)
+    row_order <- seriation::get_order(o)
+    col_order <- row_order
+    d <- as.matrix(d)
+    if (is.null(rwnms)) {
+      warning("Lack of labels on dist object might make plot difficult to interpret")
+      rwnms <- as.character(1:nrow(d))
+    }
+  }
+  else {
+    rwnms <- character(0)
+    if (inherits(d, "data.frame")) {
+      if (is.character(d[[1]]) | is.factor(d[[1]])) {
+        rwnms <- d[[1]]
+        d <- d[-1]
+      }
+      d <- as.matrix(d)
+    }
+    if (mode(d) == "logical") 
+      d <- d * 1
+    if (mode(d) != "numeric") 
+      stop("d must be convertible to a numeric matrix")
+    if (length(di <- dim(d)) != 2) 
+      stop("'d' must have 2 dimensions")
+    nr <- di[1L]
+    nc <- di[2L]
+    if (nr <= 1 || nc <= 1) 
+      stop("'d' must have at least 2 rows and 2 columns")
+    if (length(rwnms) == 0) {
+      if (length(rownames(d)) > 1) {
+        rwnms <- rownames(d)
+      }
+      else {
+        rwnms <- as.character(1:nrow(d))
+      }
+    }
+    if (method == "seriate") {
+      if (is.null(seriation_method)) 
+        seriation_method <- "PCA"
+      if (independent) {
+        o <- seriation::seriate(dist(d, method = dist_method), 
+                                method = seriation_method)
+        row_order <- seriation::get_order(o)
+        o <- seriation::seriate(dist(t(d), method = dist_method), 
+                                method = seriation_method)
+        col_order <- seriation::get_order(o)
+      }
+      else {
+        o <- seriation::seriate(d, method = seriation_method)
+        row_order <- seriation::get_order(o, dim = 1)
+        col_order <- seriation::get_order(o, dim = 2)
+      }
+    }
+    else if (method == "hclust") {
+      hclustrows <- hclust(dist(d, method = dist_method), 
+                           method = hc_method)
+      row_order <- hclustrows$order
+      hclustcols <- hclust(dist(t(d), method = dist_method), 
+                           method = hc_method)
+      col_order <- hclustcols$order
+    }
+    else {
+      stop("method must be 'seriate' or 'hclust'")
+    }
+  }
+  if (scale. == "row") {
+    d <- as_tibble(t(scale(t(d))))
+  }
+  else if (scale. == "column") {
+    d <- as_tibble(scale(d))
+  }
+  else {
+    d <- as_tibble(d)
+  }
+  rwnms <- factor(rwnms, levels = rwnms[row_order])
+  d <- dplyr::bind_cols(rowname = rwnms, d)
+  p <- d %>% tidyr::gather(key = key, value = value, -1) %>% 
+    mutate(key = factor(key, levels = colnames(d[-1])[col_order]), 
+    ) %>% ggplot(aes_string("key", "rowname", fill = "value")) + 
+    geom_tile(colour='gray') + scale_fill_viridis_c(option = viridis_option) + 
+    labs(x = "", y = "") + theme_minimal()
+  if (wrap_labels) 
+    p <- p + scale_x_discrete(labels = scales::label_wrap(10))
+  if (rotate_labels) 
+    p <- p + theme(axis.text.x = element_text(angle = 90, 
+                                              hjust = 1, vjust = 0.5))
+  if (!is.null(ann_col)) {
+    nms <- names(ann_col)
+    ann_col$value = 1
+    h <- nrow(d)/20
+    p <- p + ggnewscale::new_scale_fill() + geom_tile(data = ann_col, 
+                                                      aes_string(x = nms[1], y = nrow(d) + h, fill = nms[2]), colour='white',
+                                                      height = h) + coord_cartesian(clip = "off") + 
+      theme(plot.margin = unit(c(2, 1, 1, 1), "lines"))
+  }
+  return(p)
+}

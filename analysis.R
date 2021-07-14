@@ -48,6 +48,15 @@ female_perc <- round((sum(df$female)/nrow(df))*100)
 male_female_perc <- round(sum(df$male+df$female>1)/nrow(df)*100)
 unknown_sex_perc <- round(sum(df$male+df$female==0)/nrow(df)*100)
 sex_restrict_perc <- round(sum(df$sex_restriction)/sum(df$male+df$female>0)*100)
+sex_restrict_all <- round(mean(df$sex_restriction)*100)
+
+male_only_perc <- round(mean(df$female==0 & df$male==1 & df$sex_restriction==1)*100)
+female_only_perc <- round(mean(df$female==1 & df$male==0 & df$sex_restriction==1)*100)
+
+male_prestige <- round(100*mean(df$prestige[df$male==1]))
+female_prestige <- round(100*mean(df$prestige[df$female==1]))
+male_teach <- round(100*mean(df$social_learning[df$male==1]))
+female_teach <- round(100*mean(df$social_learning[df$female==1]))
 
 ## Age
 child_adolescent <- round(sum(df$child_adolescent)/nrow(df)*100)
@@ -73,6 +82,15 @@ collab_perc <- round(mean(df$experts_collaborate)*100)
 compete_perc <- round(mean(df$experts_compete)*100)
 
 perc_religious <- round(mean(df$religious_leader)*100)
+
+
+# Domains from model scores -----------------------------------------------
+
+source('glmer_domains.R')
+
+# Evidence by domain ------------------------------------------------------
+
+source('evidenceByDomain.R')
 
 # Plotting the evidence by text and culture -------------------------------
 
@@ -187,4 +205,22 @@ source('IRR-check.R')   # Interrater reliability
 
 # Minimum spanning tree vars ----------------------------------------------
 source('spanning-tree.R')   # This generates figure 6
+
+
+# Descriptive results -----------------------------------------------------
+
+# How many vars per text-record?
+avg_vpt <- mean(rowSums(dh))
+median_vpt <- median(rowSums(dh))
+sd_vpt <- sd(rowSums(dh))
+max_vpt <- max(rowSums(dh))
+min_vpt <- min(rowSums(dh))
+lt10_vpt <- round(100*mean(rowSums(dh) <=10))
+# hist(rowSums(dh))
+
+
+# Variable table ----------------------------------------------------------
+
+source('model_vars_table.R')
+
 
